@@ -10,7 +10,54 @@ interface TechStackProps {
 }
 
 // Маппинг технологий на иконки
-const getTechIcon = (tech: string): string => {
+const getTechIcon = (
+  tech: string,
+):
+  | 'search'
+  | 'arrow-right'
+  | 'arrow-left'
+  | 'external-link'
+  | 'menu'
+  | 'close'
+  | 'email'
+  | 'phone'
+  | 'location'
+  | 'react'
+  | 'typescript'
+  | 'javascript'
+  | 'node'
+  | 'css'
+  | 'html'
+  | 'git'
+  | 'docker'
+  | 'aws'
+  | 'mongodb'
+  | 'postgresql'
+  | 'mysql'
+  | 'redis'
+  | 'graphql'
+  | 'webpack'
+  | 'tailwind'
+  | 'bootstrap'
+  | 'figma'
+  | 'photoshop'
+  | 'illustrator'
+  | 'sketch'
+  | 'wordpress'
+  | 'shopify'
+  | 'stripe'
+  | 'firebase'
+  | 'vercel'
+  | 'netlify'
+  | 'code'
+  | 'scss'
+  | 'jquery'
+  | 'liquid'
+  | 'woocommerce'
+  | 'angular'
+  | 'framer-motion'
+  | 'styled-components'
+  | 'vue' => {
   const techLower = tech.toLowerCase();
 
   if (techLower.includes('react') || techLower.includes('next')) return 'react';
