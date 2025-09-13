@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './ImageGallery.module.scss';
 
 interface ImageGalleryProps {
@@ -82,7 +83,7 @@ export function ImageGallery({ images, alt, className }: ImageGalleryProps) {
               className={`${styles.gallery__thumbnail} ${index === currentIndex ? styles.active : ''}`}
               onClick={(e) => goToImage(index, e)}
               aria-label={`View image ${index + 1}`}>
-              <img src={image} alt={`${alt} thumbnail ${index + 1}`} className={styles.gallery__thumbnailImage} />
+              <Image src={image} alt={`${alt} thumbnail ${index + 1}`} width={80} height={60} className={styles.gallery__thumbnailImage} />
             </button>
           ))}
         </div>

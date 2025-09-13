@@ -110,7 +110,7 @@ export default function ContactPage() {
                 <span>⚡</span>
               </div>
               <h3 className={styles.contactPage__expectationTitle}>Quick Response</h3>
-              <p className={styles.contactPage__expectationDescription}>I'll get back to you within 24 hours, usually much sooner</p>
+              <p className={styles.contactPage__expectationDescription}>I&apos;ll get back to you within 24 hours, usually much sooner</p>
             </motion.div>
 
             <motion.div
@@ -160,7 +160,7 @@ export default function ContactPage() {
           <Card className={styles.contactPage__ctaCard}>
             <h2 className={styles.contactPage__ctaTitle}>Ready to Get Started?</h2>
             <p className={styles.contactPage__ctaDescription}>
-              Let's discuss your project and see how we can work together to achieve your goals.
+              Let&apos;s discuss your project and see how we can work together to achieve your goals.
             </p>
             <div className={styles.contactPage__ctaActions}>
               <Button as="link" href={`mailto:${COPY.contact.email}`} size="lg">

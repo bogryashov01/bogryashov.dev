@@ -9,16 +9,6 @@ import { COPY } from '@/lib/copy';
 import styles from './about.module.scss';
 
 export default function AboutPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
