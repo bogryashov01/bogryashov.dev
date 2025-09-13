@@ -1,0 +1,265 @@
+// About Page Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent: #f5c542;
+$accent-hover: #ffd24d;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+$font-size-5xl: 48px;
+
+.aboutPage {
+  padding-top: 64px; // pt-16 equivalent
+
+  // Hero Section
+  &__hero {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__heroContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__heroText {
+    order: 2;
+
+    @media (min-width: 1024px) {
+      order: 1;
+    }
+  }
+
+  &__heroTitle {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-5xl;
+    }
+  }
+
+  &__heroDescription {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    line-height: 1.6;
+  }
+
+  &__heroImage {
+    order: 1;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      order: 2;
+    }
+  }
+
+  &__imagePlaceholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, $accent, $accent-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-shadow: 0 20px 40px rgba(245, 197, 66, 0.3);
+
+    @media (min-width: 768px) {
+      width: 250px;
+      height: 250px;
+      font-size: 100px;
+    }
+  }
+
+  // Section Titles
+  &__sectionTitle {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $text-primary;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  // Values Section
+  &__valuesSection {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__valuesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__valueCard {
+    background: rgba(245, 197, 66, 0.05);
+    border: 1px solid rgba(245, 197, 66, 0.2);
+    border-radius: 16px;
+    padding: $spacing-xl;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(245, 197, 66, 0.1);
+      border-color: rgba(245, 197, 66, 0.4);
+      box-shadow: 0 10px 30px rgba(245, 197, 66, 0.2);
+    }
+  }
+
+  &__valueIcon {
+    font-size: 48px;
+    margin-bottom: $spacing-md;
+    display: block;
+  }
+
+  &__valueTitle {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__valueDescription {
+    color: $text-muted;
+    line-height: 1.5;
+  }
+
+  // Skills Section
+  &__skillsSection {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__skillsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    justify-content: center;
+  }
+
+  &__skillItem {
+    transition: transform 0.2s ease;
+  }
+
+  // Process Section
+  &__processSection {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__processSteps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__processStep {
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: -20px;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, $accent, transparent);
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__stepNumber {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, $accent, $accent-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: #000;
+    margin: 0 auto $spacing-md;
+    box-shadow: 0 10px 20px rgba(245, 197, 66, 0.3);
+  }
+
+  &__stepTitle {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__stepDescription {
+    color: $text-muted;
+    line-height: 1.5;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+
+  &__ctaCard {
+    max-width: 32rem; // max-w-2xl
+    margin: 0 auto;
+  }
+
+  &__ctaTitle {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  &__ctaDescription {
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+  }
+}

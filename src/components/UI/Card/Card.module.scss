@@ -1,0 +1,24 @@
+// Card Component Styles
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$accent-primary: #f5c542;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.card {
+  background-color: $bg-surface-1;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  transition: all $transition-base;
+
+  &.hover {
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba($accent-primary, 0.4);
+      box-shadow: 0 10px 25px rgba($accent-primary, 0.1);
+    }
+  }
+}

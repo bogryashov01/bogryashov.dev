@@ -1,0 +1,113 @@
+// Testimonials Component Styles
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.testimonials {
+  padding: $spacing-3xl 0;
+
+  @media (min-width: 768px) {
+    padding: $spacing-3xl 0;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (max-width: 767px) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    max-width: 512px; // max-w-2xl
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-3xl;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    // Animation will be handled by framer-motion
+  }
+
+  &__card {
+    background-color: $bg-surface-1;
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+    height: 100%;
+    padding: $spacing-xl;
+    transition: all $transition-base;
+  }
+
+  &__quote {
+    color: $text-muted;
+    margin-bottom: $spacing-md;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  &__author {
+    border-top: 1px solid $border-color;
+    padding-top: $spacing-md;
+  }
+
+  &__authorName {
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__authorCompany {
+    font-size: $font-size-sm;
+    color: $text-muted;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+}

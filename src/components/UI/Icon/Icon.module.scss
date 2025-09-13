@@ -1,0 +1,23 @@
+// Icon Component Styles
+$transition-base: 0.2s ease;
+
+.icon {
+  display: inline-block;
+  transition: all $transition-base;
+
+  // Sizes
+  &.sm {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.md {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.lg {
+    width: 24px;
+    height: 24px;
+  }
+}

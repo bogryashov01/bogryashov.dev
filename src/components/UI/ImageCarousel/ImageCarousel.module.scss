@@ -1,0 +1,207 @@
+// Image Carousel Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent: #f5c542;
+$accent-hover: #ffd24d;
+$bg-primary: #0f1114;
+$bg-surface-1: #13171c;
+$bg-surface-2: #171c22;
+$border-color: #252c34;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+$transition-slow: 0.5s ease;
+
+.carousel {
+  position: relative;
+  width: 100%;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 500px; // Фиксированная высота
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: $radius-lg;
+  }
+
+  &__imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Обрезает изображение для заполнения контейнера
+    border-radius: $radius-lg;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 17, 20, 0.8);
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-primary;
+    cursor: pointer;
+    transition: all $transition-base;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(245, 197, 66, 0.1);
+      border-color: $accent;
+      color: $accent;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__arrowLeft {
+    left: $spacing-lg;
+  }
+
+  &__arrowRight {
+    right: $spacing-lg;
+  }
+
+  &__counter {
+    position: absolute;
+    top: $spacing-lg;
+    right: $spacing-lg;
+    background: rgba(15, 17, 20, 0.8);
+    color: $text-primary;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-lg;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid $border-color;
+    z-index: 2;
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: $spacing-lg;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: $spacing-sm;
+    z-index: 2;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+      border-color: $accent;
+      background: rgba(245, 197, 66, 0.3);
+    }
+  }
+
+  &__dotActive {
+    background: $accent;
+    border-color: $accent;
+    box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.3);
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    &__container {
+      height: 300px; // Меньшая высота на мобильных
+    }
+
+    &__arrow {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__arrowLeft {
+      left: $spacing-md;
+    }
+
+    &__arrowRight {
+      right: $spacing-md;
+    }
+
+    &__counter {
+      top: $spacing-md;
+      right: $spacing-md;
+      font-size: 12px;
+      padding: 6px $spacing-sm;
+    }
+
+    &__dots {
+      bottom: $spacing-md;
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__container {
+      height: 250px; // Еще меньше на очень маленьких экранах
+    }
+  }
+
+  // Loading state
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: $text-muted;
+  }
+
+  // Error state
+  &__error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: $text-muted;
+    text-align: center;
+    padding: $spacing-xl;
+  }
+}

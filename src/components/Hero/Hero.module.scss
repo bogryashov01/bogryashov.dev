@@ -1,0 +1,111 @@
+// Hero Component Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$border-color: #252c34;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+$font-size-5xl: 48px;
+$font-size-6xl: 60px;
+$font-size-7xl: 72px;
+$transition-base: 0.2s ease;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; // Account for fixed header
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  &__content {
+    max-width: 896px; // max-w-4xl
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+    line-height: 1.1;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-6xl;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: $font-size-7xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    margin-bottom: $spacing-xl;
+    max-width: 512px; // max-w-2xl
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+
+  &__clients {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    font-size: $font-size-sm;
+    color: $text-muted;
+  }
+
+  &__client {
+    color: $text-muted;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+
+  &__separator {
+    margin: 0 $spacing-sm;
+    color: $border-color;
+  }
+}

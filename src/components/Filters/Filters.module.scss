@@ -1,0 +1,99 @@
+// Filters Component Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent-primary: #f5c542;
+$accent-hover: #ffd24d;
+$bg-primary: #0f1114; /* мокрый асфальт */
+$bg-surface-1: #13171c;
+$bg-surface-2: #171c22;
+$border-color: #252c34;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$radius-lg: 12px;
+$radius-full: 9999px;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $spacing-3xl;
+  padding: 0 $spacing-md;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    background: $bg-surface-1;
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+    padding: $spacing-sm;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  &__chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: $radius-full;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all $transition-base;
+    background-color: transparent;
+    color: $text-muted;
+    overflow: hidden;
+    min-width: 80px;
+    text-align: center;
+
+    &:focus-visible {
+      outline: 2px solid $accent-primary;
+      outline-offset: 2px;
+    }
+
+    &:not(.active) {
+      &:hover {
+        color: $text-primary;
+        background-color: rgba($accent-primary, 0.1);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &.active {
+      color: $bg-primary;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba($accent-primary, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__chipText {
+    position: relative;
+    z-index: 2;
+    transition: all $transition-base;
+  }
+
+  &__chipGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, $accent-primary, $accent-hover);
+    border-radius: $radius-full;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba($accent-primary, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}

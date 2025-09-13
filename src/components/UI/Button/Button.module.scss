@@ -1,0 +1,103 @@
+// Button Component Styles
+$bg-primary: #0f1114; /* мокрый асфальт */
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent-primary: #f5c542;
+$accent-hover: #ffd24d;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-lg;
+  font-weight: 500;
+  transition: all $transition-base;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 10px;
+
+  &:focus-visible {
+    outline: 2px solid $accent-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  // Variants
+  &.primary {
+    background-color: $accent-primary;
+    color: $bg-primary;
+
+    &:hover {
+      background-color: $accent-hover;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &.ghost {
+    border: 1px solid $border-color;
+    background-color: transparent;
+    color: $text-primary;
+
+    &:hover {
+      background-color: rgba($accent-primary, 0.1);
+      border-color: rgba($accent-primary, 0.5);
+    }
+  }
+
+  &.outline {
+    border: 1px solid $accent-primary;
+    background-color: transparent;
+    color: $accent-primary;
+
+    &:hover {
+      background-color: $accent-primary;
+      color: $bg-primary;
+    }
+  }
+
+  &.secondary {
+    background-color: $bg-surface-1;
+    color: $text-primary;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background-color: rgba($accent-primary, 0.1);
+      border-color: rgba($accent-primary, 0.3);
+    }
+  }
+
+  // Sizes
+  &.sm {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+  }
+
+  &.md {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+  }
+
+  &.lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+  }
+}

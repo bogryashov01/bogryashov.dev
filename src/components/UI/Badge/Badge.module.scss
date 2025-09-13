@@ -1,0 +1,28 @@
+// Badge Component Styles
+$bg-surface-2: #171c22;
+$text-muted: #a9b2bd;
+$accent-primary: #f5c542;
+$bg-primary: #0f1114;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$font-size-xs: 12px;
+$radius-full: 9999px;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: $radius-full;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-xs;
+  font-weight: 500;
+
+  &.default {
+    background-color: $bg-surface-2;
+    color: $text-muted;
+  }
+
+  &.accent {
+    background-color: $accent-primary;
+    color: $bg-primary;
+  }
+}

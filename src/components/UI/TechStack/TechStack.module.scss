@@ -1,0 +1,153 @@
+// Tech Stack Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent: #f5c542;
+$accent-hover: #ffd24d;
+$bg-primary: #0f1114;
+$bg-surface-1: #13171c;
+$bg-surface-2: #171c22;
+$border-color: #252c34;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$radius-lg: 12px;
+$radius-md: 8px;
+$transition-base: 0.2s ease;
+$transition-slow: 0.5s ease;
+
+.techStack {
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-muted;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: 0;
+
+    @media (max-width: 768px) {
+      gap: 6px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 6px $spacing-sm;
+    background: $bg-surface-1;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: all $transition-base;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--tech-color, $accent);
+      transform: scaleX(0);
+      transition: transform $transition-base;
+    }
+
+    &:hover {
+      background: $bg-surface-2;
+      border-color: var(--tech-color, $accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .techStack__icon {
+        transform: scale(1.1);
+        color: var(--tech-color, $accent);
+      }
+
+      .techStack__name {
+        color: $text-primary;
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--tech-color, $accent);
+    transition: all $transition-base;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__name {
+    font-size: 11px;
+    font-weight: 500;
+    color: $text-muted;
+    line-height: 1.2;
+    transition: color $transition-base;
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+
+  // Анимация появления
+  &__item {
+    animation: techItemAppear 0.4s ease-out forwards;
+  }
+
+  @keyframes techItemAppear {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 480px) {
+    &__grid {
+      gap: 4px;
+    }
+
+    &__item {
+      padding: 4px 6px;
+    }
+
+    &__icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__name {
+      font-size: 9px;
+    }
+  }
+}

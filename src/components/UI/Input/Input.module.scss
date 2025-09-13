@@ -1,0 +1,131 @@
+// Input Component Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent-primary: #f5c542;
+$accent-hover: #ffd24d;
+$bg-primary: #0f1114;
+$bg-surface-1: #13171c;
+$bg-surface-2: #171c22;
+$border-color: #252c34;
+$border-hover: #3a4550;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 40px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  // Variants
+  &.default {
+    // Default input styles
+  }
+
+  &.search {
+    .input {
+      padding-left: 48px;
+    }
+  }
+
+  // Sizes
+  &.sm {
+    .input {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-sm;
+    }
+
+    .inputIcon {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+    }
+  }
+
+  &.md {
+    .input {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base;
+    }
+
+    .inputIcon {
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  &.lg {
+    .input {
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-lg;
+    }
+
+    .inputIcon {
+      width: 24px;
+      height: 24px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  background: $bg-surface-1;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+  color: $text-primary;
+  font-family: inherit;
+  transition: all $transition-base;
+  outline: none;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:focus {
+    border-color: $accent-primary;
+    box-shadow: 0 0 0 3px rgba($accent-primary, 0.1);
+  }
+
+  &:hover:not(:focus) {
+    border-color: $border-hover;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: $bg-surface-2;
+  }
+
+  &WithIcon {
+    // Additional styles when icon is present
+  }
+}
+
+.inputIcon {
+  position: absolute;
+  color: $text-muted;
+  pointer-events: none;
+  z-index: 1;
+  transition: color $transition-base;
+
+  .input:focus + &,
+  .inputWrapper:focus-within & {
+    color: $accent-primary;
+  }
+}
+
+// Focus styles for accessibility
+.inputWrapper:focus-within {
+  .input {
+    border-color: $accent-primary;
+    box-shadow: 0 0 0 3px rgba($accent-primary, 0.1);
+  }
+}

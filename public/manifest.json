@@ -1,0 +1,16 @@
+{
+  "name": "bogryashovDev",
+  "short_name": "bogryashovDev",
+  "description": "Clean code. Clear design. Real outcomes. I build high-performance, accessible websites.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1114",
+  "theme_color": "#F5C542",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

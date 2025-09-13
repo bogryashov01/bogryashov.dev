@@ -1,0 +1,184 @@
+// Header Component Styles
+$bg-primary: #0f1114; /* мокрый асфальт */
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent-primary: #f5c542;
+$accent-hover: #ffd24d;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-xl: 20px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all $transition-base;
+
+  &.scrolled {
+    background-color: rgba($bg-primary, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (max-width: 767px) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  &__content {
+    display: flex;
+    height: 80px; // h-20 = 80px согласно спецификациям
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-primary;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+
+  &__logoIcon {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-md;
+    background-color: $bg-primary;
+    color: $accent-primary;
+    font-weight: 700;
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xl; // 32px между ссылками согласно спецификациям
+    }
+  }
+
+  &__navLink {
+    color: $text-primary;
+    text-decoration: none;
+    transition: color $transition-base;
+    border-radius: $radius-sm;
+    padding: $spacing-sm;
+
+    &:hover {
+      color: $accent-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__mobileButton {
+    display: flex;
+    padding: $spacing-sm;
+    color: $text-primary;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color $transition-base;
+    border-radius: $radius-sm;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &:hover {
+      color: $accent-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__mobileMenu {
+    display: block;
+    background-color: $bg-surface-1;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-md;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobileContent {
+    padding: $spacing-sm $spacing-sm + 2px; // 14px согласно спецификациям
+  }
+
+  &__mobileLogo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-primary;
+    text-decoration: none;
+    margin-bottom: $spacing-md;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+
+  &__mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__mobileNavLink {
+    display: block;
+    color: $text-primary;
+    text-decoration: none;
+    transition: color $transition-base;
+    border-radius: $radius-sm;
+    padding: $spacing-sm $spacing-sm;
+
+    &:hover {
+      color: $accent-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-primary;
+      outline-offset: 2px;
+    }
+  }
+}

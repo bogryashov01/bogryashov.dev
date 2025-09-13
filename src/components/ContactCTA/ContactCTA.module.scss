@@ -1,0 +1,67 @@
+// ContactCTA Component Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-lg: 18px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+$transition-base: 0.2s ease;
+
+.contactCTA {
+  padding: $spacing-3xl 0;
+
+  @media (min-width: 768px) {
+    padding: $spacing-3xl 0;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (max-width: 767px) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 512px; // max-w-2xl
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    margin-bottom: $spacing-xl;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+}

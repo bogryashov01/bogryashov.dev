@@ -1,0 +1,308 @@
+// Services Page Styles
+$text-primary: #f2f5f7;
+$text-muted: #a9b2bd;
+$accent: #f5c542;
+$accent-hover: #ffd24d;
+$bg-primary: #0f1114;
+$bg-surface-1: #13171c;
+$bg-surface-2: #171c22;
+$border-color: #252c34;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 30px;
+$font-size-4xl: 36px;
+$font-size-5xl: 48px;
+$font-size-6xl: 60px;
+$radius-lg: 12px;
+$transition-base: 0.2s ease;
+
+.servicesPage {
+  padding-top: 64px; // pt-16 equivalent
+
+  // Hero Section
+  &__hero {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__heroContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__heroText {
+    order: 2;
+
+    @media (min-width: 1024px) {
+      order: 1;
+    }
+  }
+
+  &__heroTitle {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-5xl;
+    }
+  }
+
+  &__heroDescription {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    line-height: 1.6;
+  }
+
+  &__heroImage {
+    order: 1;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      order: 2;
+    }
+  }
+
+  &__imagePlaceholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, $accent, $accent-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-shadow: 0 20px 40px rgba(245, 197, 66, 0.3);
+
+    @media (min-width: 768px) {
+      width: 250px;
+      height: 250px;
+      font-size: 100px;
+    }
+  }
+
+  // Section Titles
+  &__sectionTitle {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $text-primary;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+
+    @media (min-width: 768px) {
+      font-size: $font-size-4xl;
+    }
+  }
+
+  // Services Section
+  &__services {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__serviceCard {
+    position: relative;
+    background: rgba(245, 197, 66, 0.02);
+    border: 1px solid rgba(245, 197, 66, 0.1);
+    border-radius: 20px;
+    padding: $spacing-2xl;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      background: rgba(245, 197, 66, 0.05);
+      border-color: rgba(245, 197, 66, 0.3);
+      box-shadow: 0 20px 40px rgba(245, 197, 66, 0.1);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, $accent, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  &__serviceIcon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: $spacing-lg;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &__serviceTitle {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  &__serviceDescription {
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+    line-height: 1.6;
+  }
+
+  &__serviceFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-lg 0;
+  }
+
+  &__serviceFeature {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $text-muted;
+
+    svg {
+      color: $accent;
+      flex-shrink: 0;
+    }
+  }
+
+  &__serviceNumber {
+    position: absolute;
+    top: $spacing-lg;
+    right: $spacing-lg;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: rgba($accent, 0.1);
+    z-index: 1;
+  }
+
+  // Process Section
+  &__process {
+    margin-bottom: $spacing-3xl;
+  }
+
+  &__processSteps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__processStep {
+    text-align: center;
+    background: rgba(245, 197, 66, 0.02);
+    border: 1px solid rgba(245, 197, 66, 0.1);
+    border-radius: 16px;
+    padding: $spacing-xl;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(245, 197, 66, 0.05);
+      border-color: rgba(245, 197, 66, 0.3);
+      transform: translateY(-5px);
+    }
+  }
+
+  &__stepIcon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, $accent, $accent-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto $spacing-md;
+    box-shadow: 0 10px 20px rgba(245, 197, 66, 0.3);
+  }
+
+  &__stepTitle {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__stepDescription {
+    color: $text-muted;
+    line-height: 1.5;
+  }
+
+  // CTA Section
+  &__cta {
+    text-align: center;
+  }
+
+  &__ctaCard {
+    max-width: 32rem; // max-w-2xl
+    margin: 0 auto;
+  }
+
+  &__ctaTitle {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  &__ctaDescription {
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__ctaActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+}

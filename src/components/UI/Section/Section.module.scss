@@ -1,0 +1,21 @@
+// Section Component Styles
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+.section {
+  padding: $spacing-3xl 0;
+
+  @media (max-width: 767px) {
+    padding: $spacing-2xl 0;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    @media (max-width: 767px) {
+      padding: 0 8px;
+    }
+  }
+}

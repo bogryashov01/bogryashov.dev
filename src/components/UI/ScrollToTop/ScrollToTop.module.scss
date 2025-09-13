@@ -1,0 +1,69 @@
+// Scroll to Top Button Styles
+$text-primary: #f2f5f7;
+$accent: #f5c542;
+$accent-hover: #ffd24d;
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$spacing-md: 16px;
+$transition-base: 0.2s ease;
+
+.scrollToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, $accent, $accent-hover);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(245, 197, 66, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all $transition-base;
+  color: #000;
+  font-weight: 600;
+
+  // Rotate arrow to point up
+  svg {
+    transform: rotate(-90deg);
+    transition: transform $transition-base;
+  }
+
+  &:hover {
+    box-shadow: 0 12px 35px rgba(245, 197, 66, 0.4), 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+
+    svg {
+      transform: rotate(-90deg) translateX(-2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(245, 197, 66, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  // Focus styles for accessibility
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+
+  // Mobile adjustments
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  @media (max-width: 480px) {
+    bottom: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+}
