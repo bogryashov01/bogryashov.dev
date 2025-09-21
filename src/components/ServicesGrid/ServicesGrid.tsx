@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { COPY } from '@/lib/copy';
+import { useEffect, useState } from 'react';
+import { getCopy } from '@/lib/copy';
+import { type Locale } from '@/i18n/config';
 import styles from './ServicesGrid.module.scss';
 
 const icons = {
@@ -9,9 +11,29 @@ const icons = {
   'UI/UX & Design Systems': '🎨',
   'Performance & SEO': '⚡',
   'Consulting & Audits': '🔍',
+  'Веб-розробка': '💻',
+  'UI/UX та дизайн-системи': '🎨',
+  'Продуктивність та SEO': '⚡',
+  'Консультації та аудити': '🔍',
 };
 
-export default function ServicesGrid() {
+type Props = {
+  locale?: Locale;
+};
+
+export default function ServicesGrid({ locale = 'en' }: Props) {
+  const [copy, setCopy] = useState<{
+    services: Array<{ title: string; description: string }>;
+  } | null>(null);
+
+  useEffect(() => {
+    getCopy(locale).then(setCopy);
+  }, [locale]);
+
+  if (!copy) {
+    return <div>Loading...</div>;
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,7 +62,7 @@ export default function ServicesGrid() {
       whileInView="visible"
       viewport={{ once: true }}
       className={styles.servicesGrid}>
-      {COPY.services.map((service) => (
+      {copy.services.map((service) => (
         <motion.div key={service.title} variants={itemVariants} className={styles.servicesGrid__item}>
           <div className={styles.servicesGrid__card}>
             <div className={styles.servicesGrid__icon}>{icons[service.title as keyof typeof icons]}</div>

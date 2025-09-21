@@ -8,6 +8,9 @@ $spacing-lg: 24px;
 $spacing-xl: 32px;
 $spacing-2xl: 48px;
 $spacing-3xl: 64px;
+$spacing-4xl: 72px;
+$spacing-5xl: 80px;
+$spacing-6xl: 96px;
 $font-size-sm: 14px;
 $font-size-lg: 18px;
 $font-size-xl: 20px;
@@ -49,6 +52,8 @@ $transition-base: 0.2s ease;
     color: $text-primary;
     margin-bottom: $spacing-lg;
     line-height: 1.1;
+    width: 90%;
+    margin: auto auto $spacing-lg auto;
 
     @media (min-width: 768px) {
       font-size: $font-size-6xl;
@@ -62,7 +67,7 @@ $transition-base: 0.2s ease;
   &__subtitle {
     font-size: $font-size-lg;
     color: $text-muted;
-    margin-bottom: $spacing-xl;
+    margin-bottom: $spacing-6xl;
     max-width: 512px; // max-w-2xl
     margin-left: auto;
     margin-right: auto;

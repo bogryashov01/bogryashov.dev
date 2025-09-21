@@ -1,0 +1,45 @@
+// Variables
+$bg-surface-1: #13171c;
+$border-color: #252c34;
+$radius-sm: 4px;
+
+.techIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-sm;
+  background: rgba($bg-surface-1, 0.8);
+  border: 1px solid rgba($border-color, 0.3);
+  transition: all 0.2s ease;
+  cursor: default;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    background: rgba($bg-surface-1, 1);
+    border-color: rgba($border-color, 0.5);
+    transform: scale(1.05);
+  }
+
+  &--sm {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  &--md {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  &--lg {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}

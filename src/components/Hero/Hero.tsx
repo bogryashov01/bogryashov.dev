@@ -1,11 +1,50 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/UI/Button/Button';
-import { COPY } from '@/lib/copy';
+import { getCopy } from '@/lib/copy';
+import { type Locale } from '@/i18n/config';
 import styles from './Hero.module.scss';
 
-export default function Hero() {
+type Props = {
+  locale?: Locale;
+};
+
+export default function Hero({ locale = 'en' }: Props) {
+  const [copy, setCopy] = useState<{
+    hero: {
+      h1: string;
+      sub: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    clients: string[];
+  } | null>(null);
+
+  useEffect(() => {
+    getCopy(locale).then(setCopy);
+  }, [locale]);
+
+  // Fallback values to prevent hydration mismatch
+  const fallbackCopy = {
+    hero: {
+      h1: locale === 'uk' ? 'Чистий дизайн. Реальні результати.' : 'Clean design. Real results.',
+      sub:
+        locale === 'uk'
+          ? 'Я створюю високопродуктивні, доступні веб-сайти, які легко підтримувати та масштабувати.'
+          : 'I build high-performance, accessible websites that are easy to maintain and scale.',
+      ctaPrimary: locale === 'uk' ? 'Почати проект' : 'Start a project',
+      ctaSecondary: locale === 'uk' ? 'Переглянути роботи' : 'View my work',
+    },
+    clients:
+      locale === 'uk'
+        ? ['GCL Privé', 'La Coiffe', 'Al Bacio', 'Bonds', 'MarinhoSteel', 'VentiClean']
+        : ['GCL Privé', 'La Coiffe', 'Al Bacio', 'Bonds', 'MarinhoSteel', 'VentiClean'],
+  };
+
+  const currentCopy = copy || fallbackCopy;
+
   return (
     <section className={styles.hero}>
       <div className={styles.hero__container}>
@@ -14,14 +53,14 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className={styles.hero__content}>
-          <h1 className={styles.hero__title}>{COPY.hero.h1}</h1>
+          <h1 className={styles.hero__title}>{currentCopy.hero.h1}</h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className={styles.hero__subtitle}>
-            {COPY.hero.sub}
+            {currentCopy.hero.sub}
           </motion.p>
 
           <motion.div
@@ -29,12 +68,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className={styles.hero__actions}>
-            <Button as="link" href="/contact" size="lg">
-              {COPY.hero.ctaPrimary}
+            <Button as="link" href={`/${locale}/contact`} size="lg">
+              {currentCopy.hero.ctaPrimary}
             </Button>
 
-            <Button as="link" href="/work" variant="ghost" size="lg">
-              {COPY.hero.ctaSecondary}
+            <Button as="link" href={`/${locale}/work`} variant="ghost" size="lg">
+              {currentCopy.hero.ctaSecondary}
             </Button>
           </motion.div>
 
@@ -43,10 +82,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className={styles.hero__clients}>
-            {COPY.clients.map((client, index) => (
+            {currentCopy.clients.map((client, index) => (
               <span key={client} className={styles.hero__client}>
                 {client}
-                {index < COPY.clients.length - 1 && <span className={styles.hero__separator}>•</span>}
+                {index < currentCopy.clients.length - 1 && <span className={styles.hero__separator}>•</span>}
               </span>
             ))}
           </motion.div>

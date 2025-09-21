@@ -1,3 +1,18 @@
+import { getMessages, Locale } from '@/i18n/config';
+import { Category } from './projects';
+
+// Функция для получения переводов
+export async function getCopy(locale: Locale) {
+  return await getMessages(locale);
+}
+
+// Функция для перевода категорий
+export async function translateCategory(category: Category, locale: Locale): Promise<string> {
+  const copy = await getCopy(locale);
+  return copy.categories[category] || category;
+}
+
+// Экспортируем старый COPY для обратной совместимости (английский по умолчанию)
 export const COPY = {
   hero: {
     h1: 'Clear design. Real outcomes.',
@@ -82,7 +97,7 @@ export const COPY = {
   },
 
   contact: {
-    email: 'hello@bogryashov.dev',
+    email: 'bogryashov.dev@gmail.com',
     telegram: 'Write in Telegram',
     cta: "Let's discuss your project",
   },

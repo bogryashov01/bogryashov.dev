@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-import { ScrollToTop } from '@/components/UI/ScrollToTop/ScrollToTop';
 import { COPY } from '@/lib/copy';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,6 +21,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://bogryashov.dev'),
   alternates: {
     canonical: '/',
+    languages: {
+      en: '/',
+      uk: '/uk',
+    },
   },
   openGraph: {
     type: 'website',
@@ -75,12 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

@@ -47,6 +47,7 @@ $transition-base: 0.2s ease;
     margin-bottom: $spacing-2xl;
     font-size: $font-size-sm;
     color: $text-muted;
+    padding-top: $spacing-lg;
   }
 
   &__breadcrumbLink {
@@ -325,5 +326,40 @@ $transition-base: 0.2s ease;
     font-size: $font-size-base;
     color: $text-primary;
     font-weight: 500;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__listItem {
+    position: relative;
+    padding-left: $spacing-xl;
+    font-size: $font-size-lg;
+    color: $text-muted;
+    line-height: 1.6;
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $accent;
+      font-weight: 600;
+      font-size: $font-size-lg;
+    }
+
+    &:hover {
+      color: $text-primary;
+
+      &::before {
+        color: $accent-hover;
+      }
+    }
   }
 }

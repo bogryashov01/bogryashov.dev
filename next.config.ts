@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // Включаем экспериментальную поддержку для лучшей работы с динамическими роутами
+    typedRoutes: true,
+  },
 };
 
 export default nextConfig;

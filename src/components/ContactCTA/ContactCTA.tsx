@@ -1,11 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/UI/Button/Button';
-import { COPY } from '@/lib/copy';
+import { getCopy } from '@/lib/copy';
+import { type Locale } from '@/i18n/config';
 import styles from './ContactCTA.module.scss';
 
-export default function ContactCTA() {
+type Props = {
+  locale?: Locale;
+};
+
+export default function ContactCTA({ locale = 'en' }: Props) {
+  const [copy, setCopy] = useState<{
+    contact: {
+      cta: string;
+      email: string;
+      telegram: string;
+    };
+  } | null>(null);
+
+  useEffect(() => {
+    getCopy(locale).then(setCopy);
+  }, [locale]);
+
+  if (!copy) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -15,18 +37,20 @@ export default function ContactCTA() {
       className={styles.contactCTA}>
       <div className={styles.contactCTA__container}>
         <div className={styles.contactCTA__content}>
-          <h2 className={styles.contactCTA__title}>{COPY.contact.cta}</h2>
+          <h2 className={styles.contactCTA__title}>{copy.contact.cta}</h2>
           <p className={styles.contactCTA__subtitle}>
-            Ready to bring your vision to life? Let&apos;s discuss your project and create something amazing together.
+            {locale === 'uk'
+              ? 'Готові втілити ваше бачення в життя? Давайте обговоримо ваш проект і створимо щось дивовижне разом.'
+              : "Ready to bring your vision to life? Let's discuss your project and create something amazing together."}
           </p>
 
           <div className={styles.contactCTA__actions}>
-            <Button as="link" href={`mailto:${COPY.contact.email}`} size="lg">
-              {COPY.contact.email}
+            <Button as="link" href={`mailto:${copy.contact.email}`} size="lg">
+              {copy.contact.email}
             </Button>
 
             <Button as="link" href="https://t.me/bogryashovdev" external variant="ghost" size="lg">
-              {COPY.contact.telegram}
+              {copy.contact.telegram}
             </Button>
           </div>
         </div>

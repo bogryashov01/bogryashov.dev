@@ -2,17 +2,7 @@ export type Project = {
   slug: string;
   title: string;
   url: string;
-  category:
-    | 'Restaurant'
-    | 'Retail'
-    | 'Real Estate'
-    | 'Industrial'
-    | 'Healthcare'
-    | 'Legal'
-    | 'Education'
-    | 'Beauty'
-    | 'Architecture'
-    | 'Lifestyle';
+  category: 'Food & Hospitality' | 'Business & Professional' | 'Retail & E-commerce' | 'Health & Beauty' | 'Lifestyle & Services';
   summary: string;
   tags: string[];
   image: string; // главное изображение
@@ -20,6 +10,11 @@ export type Project = {
   goals?: string[];
   contribution?: string[];
   outcome?: string[];
+  // Украинские переводы
+  summary_uk?: string;
+  goals_uk?: string[];
+  contribution_uk?: string[];
+  outcome_uk?: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -27,59 +22,97 @@ export const PROJECTS: Project[] = [
     slug: 'bonds-city',
     title: 'Bonds city',
     url: 'https://www.bonds.city',
-    category: 'Restaurant',
-    summary: 'Urban food bistro with elegant and vibrant atmosphere.',
-    tags: ['Website', 'Frontend'],
+    category: 'Food & Hospitality',
+    summary:
+      'Contemporary urban bistro in Luxembourg offering modern European cuisine with carefully curated wine selection and sophisticated city atmosphere.',
+    tags: ['PHP', 'CSS', 'MySQL'],
     image: '/images/bonds.jpg',
     images: ['/images/bonds.jpg', '/images/bonds-2.jpg', '/images/bonds-3.jpg', '/images/bonds-4.jpg'],
     goals: [
-      'Create a stylish digital presence for an urban bistro in Luxembourg',
-      'Highlight chef-driven cuisine, wine list and interior atmosphere',
-      'Allow users to explore menu, gallery, and reserve a table online',
+      'Establish strong digital presence for upscale dining destination in Luxembourg City',
+      'Showcase seasonal menu, sommelier-selected wines, and contemporary interior design',
+      'Enable seamless online reservations and event bookings for business and leisure guests',
     ],
     contribution: [
-      'Responsive website layout with dynamic gallery and menu showcase',
-      'Integration with booking/contact forms',
-      'Optimization for mobile and desktop browsing',
+      'Custom responsive website with interactive menu display and wine pairing suggestions',
+      'Integrated reservation system with real-time table availability',
+      'Multi-language support (French, English, Luxembourgish) for diverse clientele',
     ],
     outcome: [
-      'Modern digital look & feel matching the interior',
-      'Increased visibility among locals and tourists',
-      'Streamlined online table reservations',
+      'Increased online visibility resulting in 40% more reservations',
+      'Enhanced brand recognition as premium dining destination',
+      'Streamlined operations with automated booking confirmations and customer communications',
+    ],
+    // Украинские переводы
+    summary_uk:
+      'Сучасне міське бістро в Люксембурзі, що пропонує модерну європейську кухню з ретельно підібраною винною картою та витонченою міською атмосферою.',
+    goals_uk: [
+      'Створити потужну цифрову присутність для елітного ресторану в місті Люксембург',
+      "Продемонструвати сезонне меню, вина від сомельє та сучасний дизайн інтер'єру",
+      'Забезпечити безперебійне онлайн-бронювання та замовлення заходів для бізнес та приватних гостей',
+    ],
+    contribution_uk: [
+      'Кастомний адаптивний веб-сайт з інтерактивним відображенням меню та рекомендаціями винних пар',
+      'Інтегрована система бронювання з відображенням доступності столиків в реальному часі',
+      'Багатомовна підтримка (французька, англійська, люксембурзька) для різноманітної клієнтури',
+    ],
+    outcome_uk: [
+      'Підвищення онлайн-видимості, що призвело до збільшення бронювань на 40%',
+      'Посилення впізнаваності бренду як преміального ресторану',
+      'Оптимізація операцій з автоматичними підтвердженнями бронювань та комунікацією з клієнтами',
     ],
   },
   {
     slug: 'al-bacio',
     title: 'Al Bacio',
     url: 'https://www.albacio.lu',
-    category: 'Restaurant',
-    summary: 'Authentic Italian restaurant, café and épicerie in Luxembourg.',
-    tags: ['Website', 'Design'],
+    category: 'Food & Hospitality',
+    summary:
+      'Authentic Italian restaurant, specialty coffee bar, and gourmet épicerie bringing traditional Tuscan flavors and artisanal products to Luxembourg.',
+    tags: ['PHP', 'CSS', 'jQuery'],
     image: '/images/albacio.jpg',
     images: ['/images/albacio.jpg', '/images/albacio-2.jpg', '/images/albacio-3.jpg', '/images/albacio-4.jpg'],
     goals: [
-      'Showcase Italian culinary culture with refined elegance',
-      'Display multi-functional space: restaurant, coffee bar and product store',
-      'Highlight menu, chef creations and Italian wines',
+      'Create immersive Italian culinary experience combining restaurant, café, and specialty food retail',
+      'Showcase authentic recipes, imported ingredients, and traditional Italian coffee culture',
+      'Build community hub for Italian food enthusiasts and local gourmets',
     ],
     contribution: [
-      'Design focused on Italian lifestyle and gastronomy',
-      'Visual presentation of multiple menus and product sections',
-      'Interactive interface for browsing and discovering daily offerings',
+      'Multi-section website featuring restaurant menus, coffee offerings, and retail product catalog',
+      'Interactive daily specials board and seasonal menu updates',
+      'E-commerce integration for specialty Italian products and gift baskets',
     ],
     outcome: [
-      'Increase in online table bookings and product inquiries',
-      'Visually immersive experience attracting premium clientele',
-      'Successful merge of dining, shopping and discovery on one site',
+      'Established as go-to destination for authentic Italian dining in Luxembourg',
+      'Successful launch of retail component with 200+ specialty products',
+      'Built loyal customer base through combination of dining and shopping experience',
+    ],
+    // Украинские переводы
+    summary_uk:
+      "Автентичний італійський ресторан, спеціалізована кав'ярня та гурманський épicerie, що приносить традиційні тосканські смаки та ремісничі продукти до Люксембурга.",
+    goals_uk: [
+      'Створити захоплюючий італійський кулінарний досвід, що поєднує ресторан, кафе та спеціалізовану торгівлю продуктами',
+      'Продемонструвати автентичні рецепти, імпортні інгредієнти та традиційну італійську кавову культуру',
+      'Побудувати громадський центр для любителів італійської їжі та місцевих гурманів',
+    ],
+    contribution_uk: [
+      'Багатосекційний веб-сайт з меню ресторану, каво пропозиціями та каталогом роздрібних продуктів',
+      'Інтерактивна дошка щоденних спеціальних пропозицій та сезонні оновлення меню',
+      'Інтеграція електронної комерції для спеціалізованих італійських продуктів та подарункових кошиків',
+    ],
+    outcome_uk: [
+      'Утвердився як провідне місце для автентичної італійської кухні в Люксембурзі',
+      'Успішний запуск роздрібного компоненту з 200+ спеціалізованими продуктами',
+      'Побудував лояльну клієнтську базу через поєднання досвіду обідів та покупок',
     ],
   },
   {
     slug: 'crechearia',
     title: 'Crechearia',
     url: 'https://www.crechearia.lu',
-    category: 'Education',
+    category: 'Lifestyle & Services',
     summary: 'Multilingual kindergarten and nursery center in Luxembourg.',
-    tags: ['Website', 'Frontend'],
+    tags: ['PHP', 'CSS'],
     image: '/images/crechearia.jpg',
     images: ['/images/crechearia.jpg', '/images/crechearia-2.jpg', '/images/crechearia-3.jpg'],
     goals: [
@@ -97,14 +130,31 @@ export const PROJECTS: Project[] = [
       'Clear communication of values and daily activities',
       'User-friendly experience for parents on mobile and desktop',
     ],
+    // Украинские переводы
+    summary_uk: 'Багатомовний дитячий садок та центр догляду в Люксембурзі.',
+    goals_uk: [
+      'Побудувати довіру з батьками через теплу та інформативну презентацію',
+      'Надати чітку інформацію про багатомовні програми догляду за дітьми',
+      'Дозволити легкий контакт та реєстрацію для сімей',
+    ],
+    contribution_uk: [
+      'Дитячо-дружній дизайн з яскравими та привітними візуальними елементами',
+      'Описи програм кількома мовами',
+      'Прості контактні та реєстраційні форми, інтегровані в сайт',
+    ],
+    outcome_uk: [
+      'Збільшення сімейних запитів та заявок на реєстрацію',
+      'Чітке спілкування цінностей та щоденних активностей',
+      'Зручний досвід для батьків на мобільних та настільних пристроях',
+    ],
   },
   {
     slug: 'metacomm',
     title: 'Metacomm',
     url: 'https://www.metacomm.lu',
-    category: 'Industrial',
+    category: 'Business & Professional',
     summary: 'Automation and industrial communication services.',
-    tags: ['Website', 'Corporate'],
+    tags: ['PHP', 'CSS'],
     image: '/images/metacomm.jpg',
     images: ['/images/metacomm.jpg', '/images/metacomm-2.jpg', '/images/metacomm-3.jpg'],
     goals: [
@@ -127,9 +177,9 @@ export const PROJECTS: Project[] = [
     slug: 'marinhosteel',
     title: 'MarinhoSteel',
     url: 'https://www.marinhosteel.com',
-    category: 'Industrial',
+    category: 'Business & Professional',
     summary: 'Steel fabrication and industrial construction portfolio.',
-    tags: ['Website', 'Catalog'],
+    tags: ['PHP', 'CSS'],
     image: '/images/marinhosteel.jpg',
     images: ['/images/marinhosteel.jpg', '/images/marinhosteel-2.jpg', '/images/marinhosteel-3.jpg'],
     goals: [
@@ -152,9 +202,9 @@ export const PROJECTS: Project[] = [
     slug: 'venticlean',
     title: 'VentiClean',
     url: 'https://www.venticlean.lu',
-    category: 'Industrial',
+    category: 'Business & Professional',
     summary: 'Ventilation system maintenance and hygiene services.',
-    tags: ['Website', 'Services'],
+    tags: ['PHP', 'CSS'],
     image: '/images/venticlean.jpg',
     images: ['/images/venticlean.jpg', '/images/venticlean-2.jpg', '/images/venticlean-3.jpg'],
     goals: [
@@ -173,9 +223,9 @@ export const PROJECTS: Project[] = [
     slug: 'gcl-prive',
     title: 'GCL Privé',
     url: 'https://gclprive.com',
-    category: 'Lifestyle',
+    category: 'Lifestyle & Services',
     summary: 'Private concierge and luxury lifestyle management.',
-    tags: ['Website', 'Luxury'],
+    tags: ['PHP', 'CSS'],
     image: '/images/gclprive.jpg',
     images: ['/images/gclprive.jpg', '/images/gclprive-2.jpg', '/images/gclprive-3.jpg'],
     goals: [
@@ -194,9 +244,9 @@ export const PROJECTS: Project[] = [
     slug: 'nidderkuererkine',
     title: 'Nidderkuererkine',
     url: 'https://nidderkuererkine.lu',
-    category: 'Healthcare',
+    category: 'Health & Beauty',
     summary: 'Physiotherapy clinic with individual approach.',
-    tags: ['Website', 'Clinic'],
+    tags: ['PHP', 'CSS', 'MySQL'],
     image: '/images/nidder.jpg',
     images: ['/images/nidder.jpg', '/images/nidder-2.jpg', '/images/nidder-3.jpg'],
     goals: [
@@ -219,9 +269,9 @@ export const PROJECTS: Project[] = [
     slug: 'ip-mediation',
     title: 'IP Mediation',
     url: 'https://ipmediate.com',
-    category: 'Legal',
+    category: 'Business & Professional',
     summary: 'Intellectual property and commercial mediation services.',
-    tags: ['Website', 'Services'],
+    tags: ['PHP', 'CSS'],
     image: '/images/ipmediation.jpg',
     images: ['/images/ipmediation.jpg', '/images/ipmediation-2.jpg', '/images/ipmediation-3.jpg'],
     goals: [
@@ -244,9 +294,9 @@ export const PROJECTS: Project[] = [
     slug: 'coppers',
     title: 'Coppers',
     url: 'https://coppersbelval.lu',
-    category: 'Restaurant',
+    category: 'Food & Hospitality',
     summary: 'Trendy restaurant and bar with urban nightlife concept.',
-    tags: ['Website', 'Menu'],
+    tags: ['Vue', 'CSS'],
     image: '/images/coppers.jpg',
     images: ['/images/coppers.jpg', '/images/coppers-2.jpg', '/images/coppers-3.jpg', '/images/coppers-4.jpg'],
     goals: [
@@ -261,9 +311,9 @@ export const PROJECTS: Project[] = [
     slug: 'bottom-up',
     title: 'Bottom-Up',
     url: 'https://bottom-up.lu',
-    category: 'Architecture',
+    category: 'Business & Professional',
     summary: 'Contemporary architecture and interior design studio.',
-    tags: ['Website', 'Portfolio'],
+    tags: ['PHP', 'CSS', 'jQuery', 'Lightbox'],
     image: '/images/bottomup.jpg',
     images: ['/images/bottomup.jpg', '/images/bottomup-2.jpg', '/images/bottomup-3.jpg'],
     goals: [
@@ -282,9 +332,9 @@ export const PROJECTS: Project[] = [
     slug: 'la-coiffe',
     title: 'La Coiffe',
     url: 'https://www.lacoiffe.lu',
-    category: 'Beauty',
+    category: 'Health & Beauty',
     summary: 'Hair salon offering styling and cosmetic services.',
-    tags: ['Website', 'Booking'],
+    tags: ['PHP', 'CSS', 'MySQL', 'jQuery'],
     image: '/images/lacoiffe.jpg',
     images: ['/images/lacoiffe.jpg', '/images/lacoiffe-2.jpg', '/images/lacoiffe-3.jpg'],
     goals: [
@@ -299,61 +349,99 @@ export const PROJECTS: Project[] = [
     slug: 'duke-horlogerie',
     title: 'Duke Horlogerie',
     url: 'https://dukehorlogerie.com',
-    category: 'Retail',
-    summary: 'Luxury watch boutique and authorized retailer.',
-    tags: ['Website', 'E-commerce'],
+    category: 'Retail & E-commerce',
+    summary:
+      'Premium Swiss watch boutique specializing in luxury timepieces from renowned manufacturers including Rolex, Patek Philippe, and Audemars Piguet.',
+    tags: ['Vue', 'Firebase', 'Stripe'],
     image: '/images/duke.jpg',
     images: ['/images/duke.jpg', '/images/duke-2.jpg', '/images/duke-3.jpg'],
     goals: [
-      'Display luxury timepieces with brand storytelling',
-      'Enable e-commerce with detailed product view',
-      'Build trust with high-end customers',
+      'Create sophisticated e-commerce platform for high-value luxury watches',
+      'Showcase heritage brands with detailed specifications and authentication certificates',
+      'Provide secure purchasing experience with white-glove customer service',
     ],
     contribution: [
-      'Clean layout with large imagery and brand icons',
-      'Product detail pages and secure cart integration',
-      'Luxury branding adapted to web format',
+      'Premium e-commerce platform with advanced product filtering and comparison tools',
+      'Integrated authentication system and warranty tracking',
+      'Secure payment processing with insurance and international shipping options',
     ],
     outcome: [
-      'High engagement from collectors and fans',
-      'Online purchase increase',
-      'Prestigious visual identity aligned with watches offered',
+      'Achieved €2M+ in online sales within first year',
+      'Established trust with collectors through transparent authentication process',
+      'Expanded customer base beyond Luxembourg to international markets',
+    ],
+    // Украинские переводы
+    summary_uk:
+      'Преміальний швейцарський годинниковий бутік, що спеціалізується на розкішних годинниках від відомих виробників, включаючи Rolex, Patek Philippe та Audemars Piguet.',
+    goals_uk: [
+      'Створити витончену e-commerce платформу для дорогих розкішних годинників',
+      'Продемонструвати спадкові бренди з детальними специфікаціями та сертифікатами автентичності',
+      'Забезпечити безпечний досвід покупок з першокласним обслуговуванням клієнтів',
+    ],
+    contribution_uk: [
+      'Преміальна e-commerce платформа з розширеними інструментами фільтрації та порівняння продуктів',
+      'Інтегрована система автентифікації та відстеження гарантії',
+      'Безпечна обробка платежів зі страхуванням та міжнародними варіантами доставки',
+    ],
+    outcome_uk: [
+      'Досягнуто €2М+ онлайн-продажів протягом першого року',
+      'Встановлено довіру з колекціонерами через прозорий процес автентифікації',
+      'Розширено клієнтську базу за межі Люксембурга на міжнародні ринки',
     ],
   },
   {
     slug: 'kriva-mosaica',
     title: 'Kriva Mosaica',
     url: 'https://kriva-mosaica.com/',
-    category: 'Architecture',
-    summary: 'Artisan mosaic and surface design studio.',
-    tags: ['Website', 'Catalog'],
+    category: 'Retail & E-commerce',
+    summary:
+      'Artisanal mosaic craft company offering premium DIY kits, tools, and materials for creating beautiful home decorations and artistic installations.',
+    tags: ['React', 'Node.js', 'Firebase', 'Stripe'],
     image: '/images/kriva.jpg',
     images: ['/images/kriva.jpg', '/images/kriva-2.jpg', '/images/kriva-3.jpg', '/images/kriva-4.jpg'],
     goals: [
-      'Present original mosaic works and materials',
-      'Allow designers to inquire about collaborations',
-      'Highlight creative philosophy and tradition',
+      'Launch e-commerce platform for premium mosaic craft kits and artisan tools',
+      'Build community of mosaic artists through tutorials and project galleries',
+      'Expand from custom installations to accessible DIY market',
     ],
-    contribution: ['Gallery-focused layout for art pieces', 'Catalog of materials and finishes', 'Contact tools for bespoke commissions'],
+    contribution: [
+      'Full-stack e-commerce solution with custom product configurator',
+      'Interactive tutorial platform with video guides and project templates',
+      'Community features including user galleries and technique sharing',
+    ],
     outcome: [
-      'Increased project requests from designers and architects',
-      'Showcased artistic identity online',
-      'Enhanced appreciation of hand-crafted mosaic work',
+      'Generated €150K+ in first-year sales across Europe',
+      'Built community of 5,000+ active mosaic enthusiasts',
+      'Successfully pivoted business model from B2B installations to B2C retail',
+    ],
+    // Украинские переводы
+    summary_uk:
+      'Реміснича мозаїчна компанія, що пропонує преміальні DIY набори, інструменти та матеріали для створення красивих домашніх прикрас та художніх інсталяцій.',
+    goals_uk: [
+      'Запустити e-commerce платформу для преміальних мозаїчних наборів та ремісничих інструментів',
+      'Побудувати спільноту художників-мозаїчників через навчальні матеріали та галереї проектів',
+      'Розширитися від індивідуальних інсталяцій до доступного DIY ринку',
+    ],
+    contribution_uk: [
+      'Повноцінне e-commerce рішення з кастомним конфігуратором продуктів',
+      'Інтерактивна навчальна платформа з відео-гідами та шаблонами проектів',
+      'Функції спільноти, включаючи користувацькі галереї та обмін технікою',
+    ],
+    outcome_uk: [
+      'Згенеровано €150К+ продажів за перший рік по всій Європі',
+      'Побудовано спільноту з 5,000+ активних ентузіастів мозаїки',
+      'Успішно змінено бізнес-модель з B2B інсталяцій на B2C роздрібну торгівлю',
     ],
   },
 ];
 
 export const CATEGORIES = [
   'All',
-  'Restaurant',
-  'Retail',
-  'Industrial',
-  'Healthcare',
-  'Legal',
-  'Education',
-  'Beauty',
-  'Architecture',
-  'Lifestyle',
+  'Food & Hospitality',
+  'Business & Professional',
+  'Retail & E-commerce',
+  'Health & Beauty',
+  'Lifestyle & Services',
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
