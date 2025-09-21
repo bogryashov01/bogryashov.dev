@@ -50,9 +50,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       }
 
       return (
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         <Link
           ref={ref as React.ForwardedRef<HTMLAnchorElement>}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           href={href as any}
           className={cn(buttonClasses, 'button-link')}
           {...linkProps}>
