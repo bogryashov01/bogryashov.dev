@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/UI/Button/Button';
+import TypewriterText from '@/components/UI/TypewriterText/TypewriterText';
 import { getCopy } from '@/lib/copy';
 import { type Locale } from '@/i18n/config';
 import styles from './Hero.module.scss';
@@ -53,12 +54,12 @@ export default function Hero({ locale = 'en' }: Props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className={styles.hero__content}>
-          <h1 className={styles.hero__title}>{currentCopy.hero.h1}</h1>
+          <TypewriterText text={currentCopy.hero.h1} className={styles.hero__title} delay={300} speed={90} lineDelay={400} />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 4.5 }}
             className={styles.hero__subtitle}>
             {currentCopy.hero.sub}
           </motion.p>
@@ -66,7 +67,7 @@ export default function Hero({ locale = 'en' }: Props) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 4.8 }}
             className={styles.hero__actions}>
             <Button as="link" href={`/${locale}/contact`} size="lg">
               {currentCopy.hero.ctaPrimary}
@@ -80,7 +81,7 @@ export default function Hero({ locale = 'en' }: Props) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 5.1 }}
             className={styles.hero__clients}>
             {currentCopy.clients.map((client, index) => (
               <span key={client} className={styles.hero__client}>

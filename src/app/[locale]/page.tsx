@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, use } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Hero from '@/components/Hero/Hero';
 import Filters from '@/components/Filters/Filters';
 import WorkGrid from '@/components/WorkGrid/WorkGrid';
@@ -65,35 +66,74 @@ export default function LocaleHomePage({ params }: Props) {
       <Hero locale={resolvedParams.locale} />
 
       <Section>
-        <div className={styles.homePage__workHeader}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className={styles.homePage__workHeader}>
           <h2 className={styles.homePage__workTitle}>{currentCopy.homepage.selectedWork}</h2>
           <p className={styles.homePage__workSubtitle}>{currentCopy.homepage.selectedWorkSubtitle}</p>
-        </div>
+        </motion.div>
 
-        <Filters activeCategory={activeCategory} onCategoryChange={setActiveCategory} locale={resolvedParams.locale} />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}>
+          <Filters activeCategory={activeCategory} onCategoryChange={setActiveCategory} locale={resolvedParams.locale} />
+        </motion.div>
 
-        <WorkGrid projects={filteredProjects} activeCategory={activeCategory} locale={resolvedParams.locale} />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}>
+          <WorkGrid projects={filteredProjects} activeCategory={activeCategory} locale={resolvedParams.locale} />
+        </motion.div>
 
-        <div className="text-center mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-12">
           <Link href={`/${resolvedParams.locale}/work`} className={styles.viewAllLink}>
             {currentCopy.homepage.viewAllWork}
             <svg className={styles.viewAllLink__icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-        </div>
+        </motion.div>
       </Section>
 
       <Section className={styles.homePage__servicesSection}>
-        <div className={styles.homePage__servicesHeader}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className={styles.homePage__servicesHeader}>
           <h2 className={styles.homePage__servicesTitle}>{currentCopy.homepage.servicesTitle}</h2>
           <p className={styles.homePage__servicesSubtitle}>{currentCopy.homepage.servicesSubtitle}</p>
-        </div>
+        </motion.div>
 
-        <ServicesGrid locale={resolvedParams.locale} />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}>
+          <ServicesGrid locale={resolvedParams.locale} />
+        </motion.div>
       </Section>
 
-      <ContactCTA locale={resolvedParams.locale} />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}>
+        <ContactCTA locale={resolvedParams.locale} />
+      </motion.div>
     </main>
   );
 }

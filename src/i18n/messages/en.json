@@ -1,6 +1,6 @@
 {
   "hero": {
-    "h1": "Clear design. Real outcomes.",
+    "h1": ["Clear design.", "Real outcomes."],
     "sub": "I build high-performance, accessible websites that are easy to maintain and scale.",
     "ctaPrimary": "Start a project",
     "ctaSecondary": "View my work"
@@ -222,9 +222,7 @@
     "ukrainian": "Українська"
   },
   "footer": {
-    "copyright": "All rights reserved.",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "copyright": "All rights reserved."
   },
   "categories": {
     "All": "All",
