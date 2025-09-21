@@ -16,7 +16,35 @@ type Props = {
 
 export default function ContactPage({ params }: Props) {
   const resolvedParams = React.use(params);
-  const [copy, setCopy] = useState<any>(null);
+  const [copy, setCopy] = useState<{
+    contact: {
+      title: string;
+      description: string;
+      sendEmail: string;
+      telegram: string;
+      getInTouch: string;
+      emailTitle: string;
+      emailDescription: string;
+      telegramTitle: string;
+      telegramDescription: string;
+      whatToExpect: string;
+      quickResponse: string;
+      quickResponseDescription: string;
+      freeConsultation: string;
+      freeConsultationDescription: string;
+      detailedProposal: string;
+      detailedProposalDescription: string;
+      transparency: string;
+      transparencyDescription: string;
+      readyToStart: string;
+      readyToStartDescription: string;
+      startProject: string;
+      quickChat: string;
+      email: string;
+      cta: string;
+      ctaSubtitle: string;
+    };
+  } | null>(null);
 
   useEffect(() => {
     getCopy(resolvedParams.locale).then(setCopy);

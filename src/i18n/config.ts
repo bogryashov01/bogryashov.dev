@@ -10,7 +10,7 @@ export async function getMessages(locale: Locale) {
   try {
     const messages = await import(`./messages/${locale}.json`);
     return messages.default;
-  } catch (error) {
+  } catch {
     // Если файл не найден, возвращаем английский по умолчанию
     const messages = await import(`./messages/en.json`);
     return messages.default;

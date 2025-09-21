@@ -118,7 +118,27 @@ const serviceDataUk = {
 
 export default function ServicesPage({ params }: Props) {
   const resolvedParams = React.use(params);
-  const [copy, setCopy] = useState<any>(null);
+  const [copy, setCopy] = useState<{
+    servicesPage: {
+      title: string;
+      subtitle: string;
+      whatIOffer: string;
+      howIWork: string;
+      discovery: string;
+      discoveryDescription: string;
+      design: string;
+      designDescription: string;
+      development: string;
+      developmentDescription: string;
+      launch: string;
+      launchDescription: string;
+      readyToStart: string;
+      readyToStartDescription: string;
+      startProject: string;
+      viewMyWork: string;
+    };
+    services: Array<{ title: string; description: string }>;
+  } | null>(null);
 
   useEffect(() => {
     getCopy(resolvedParams.locale).then(setCopy);
@@ -177,8 +197,8 @@ export default function ServicesPage({ params }: Props) {
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className={styles.servicesPage__services}>
           <h2 className={styles.servicesPage__sectionTitle}>{copy.servicesPage.whatIOffer}</h2>
           <div className={styles.servicesPage__servicesGrid}>
-            {copy.services.map((service: any, index: number) => {
-              const serviceInfo = Object.values(currentServiceData)[index] as any;
+            {copy.services.map((service: { title: string; description: string }, index: number) => {
+              const serviceInfo = Object.values(currentServiceData)[index] as { icon: string; gradient: string; features: string[] };
               return (
                 <motion.div
                   key={service.title}

@@ -20,7 +20,15 @@ type Props = {
 export default function LocaleHomePage({ params }: Props) {
   const resolvedParams = use(params);
   const [activeCategory, setActiveCategory] = useState<Category>('All');
-  const [copy, setCopy] = useState<any>(null);
+  const [copy, setCopy] = useState<{
+    homepage: {
+      selectedWork: string;
+      selectedWorkSubtitle: string;
+      viewAllWork: string;
+      servicesTitle: string;
+      servicesSubtitle: string;
+    };
+  } | null>(null);
 
   useEffect(() => {
     getCopy(resolvedParams.locale).then(setCopy);

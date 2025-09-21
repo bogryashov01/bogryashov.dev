@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getCopy } from '@/lib/copy';
 import { type Locale } from '@/i18n/config';
 import { Section } from '@/components/UI/Section/Section';

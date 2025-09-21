@@ -19,7 +19,15 @@ export default function WorkPage({ params }: Props) {
   const resolvedParams = React.use(params);
   const [activeCategory, setActiveCategory] = useState<Category>('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [copy, setCopy] = useState<any>(null);
+  const [copy, setCopy] = useState<{
+    work: {
+      title: string;
+      subtitle: string;
+      searchPlaceholder: string;
+      projectsFound: string;
+      projectFound: string;
+    };
+  } | null>(null);
 
   useEffect(() => {
     getCopy(resolvedParams.locale).then(setCopy);
