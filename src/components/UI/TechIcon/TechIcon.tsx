@@ -15,7 +15,7 @@ import {
   faStripe,
   faFigma,
 } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDatabase, faServer, faPalette, faGear, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faDatabase, faServer, faPalette, faGear } from '@fortawesome/free-solid-svg-icons';
 import styles from './TechIcon.module.scss';
 
 interface TechIconProps {

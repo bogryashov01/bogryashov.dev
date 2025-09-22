@@ -9,7 +9,16 @@ import { Card } from '@/components/UI/Card/Card';
 import { Button } from '@/components/UI/Button/Button';
 import { Icon } from '@/components/UI/Icon/Icon';
 import FAIcon from '@/components/UI/FAIcon/FAIcon';
-import { faCode, faPalette, faBolt, faSearch, faRocket, faClipboardList, faCogs } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCode,
+  faPalette,
+  faBolt,
+  faSearch,
+  faRocket,
+  faClipboardList,
+  faCogs,
+  type IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import styles from '../../services/services.module.scss';
 
 type Props = {
@@ -200,7 +209,11 @@ export default function ServicesPage({ params }: Props) {
           <h2 className={styles.servicesPage__sectionTitle}>{copy.servicesPage.whatIOffer}</h2>
           <div className={styles.servicesPage__servicesGrid}>
             {copy.services.map((service: { title: string; description: string }, index: number) => {
-              const serviceInfo = Object.values(currentServiceData)[index] as { icon: string; gradient: string; features: string[] };
+              const serviceInfo = Object.values(currentServiceData)[index] as {
+                icon: IconDefinition;
+                gradient: string;
+                features: string[];
+              };
               return (
                 <motion.div
                   key={service.title}
