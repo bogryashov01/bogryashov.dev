@@ -76,7 +76,7 @@ export default function TechIcon({ tech, size = 'md' }: TechIconProps) {
 
   return (
     <div className={`${styles.techIcon} ${styles[`techIcon--${size}`]}`} title={tech} aria-label={tech}>
-      <FAIcon icon={icon} size={size} variant="yellow-bg" />
+      <FAIcon icon={icon} size={size} variant="default" />
     </div>
   );
 }

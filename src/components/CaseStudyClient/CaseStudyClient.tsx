@@ -29,6 +29,7 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
       years: string;
       objective: string;
       category: string;
+      technologies: string;
       projectOverview: string;
       projectGoals: string;
       myContribution: string;
@@ -118,7 +119,7 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
                 </div>
 
                 <div className={styles.caseStudy__sidebarItem}>
-                  <TechStack technologies={project.tags} title="Technologies" />
+                  <TechStack technologies={project.tags} title={copy.caseStudy.technologies} />
                 </div>
               </div>
             </div>
