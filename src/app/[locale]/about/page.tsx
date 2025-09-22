@@ -8,6 +8,8 @@ import { Section } from '@/components/UI/Section/Section';
 import { Card } from '@/components/UI/Card/Card';
 import { Badge } from '@/components/UI/Badge/Badge';
 import { Button } from '@/components/UI/Button/Button';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import { faUser, faBullseye, faBolt, faRocket, faLightbulb, faStar } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../about/about.module.scss';
 
 type Props = {
@@ -78,7 +80,7 @@ export default function AboutPage({ params }: Props) {
             </div>
             <div className={styles.aboutPage__heroImage}>
               <div className={styles.aboutPage__imagePlaceholder}>
-                <span>👨‍💻</span>
+                <FAIcon icon={faUser} size="xl" variant="yellow-bg" />
               </div>
             </div>
           </div>
@@ -101,7 +103,7 @@ export default function AboutPage({ params }: Props) {
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.2 }}>
                 <div className={styles.aboutPage__valueIcon}>
-                  <span>{['🎯', '⚡', '🚀', '💡', '⭐'][index]}</span>
+                  <FAIcon icon={[faBullseye, faBolt, faRocket, faLightbulb, faStar][index]} size="lg" variant="yellow-bg" />
                 </div>
                 <h3 className={styles.aboutPage__valueTitle}>{value.title}</h3>
                 <p className={styles.aboutPage__valueDescription}>{value.description}</p>

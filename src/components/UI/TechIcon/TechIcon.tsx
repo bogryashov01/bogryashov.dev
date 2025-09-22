@@ -1,6 +1,21 @@
 'use client';
 
 import React from 'react';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import {
+  faReact,
+  faVuejs,
+  faJs,
+  faPhp,
+  faNodeJs,
+  faGitAlt,
+  faDocker,
+  faAws,
+  faWordpress,
+  faStripe,
+  faFigma,
+} from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDatabase, faServer, faPalette, faGear, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import styles from './TechIcon.module.scss';
 
 interface TechIconProps {
@@ -8,116 +23,60 @@ interface TechIconProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const techLogos: Record<string, React.ReactElement> = {
+const techIcons = {
   // Frontend
-  React: (
-    <svg viewBox="0 0 24 24" fill="#61dafb">
-      <circle cx="12" cy="12" r="2.5" />
-      <path
-        d="M12 2c5.5 0 10 2.5 10 6s-4.5 6-10 6S2 13.5 2 10s4.5-6 10-6zm0 16c-5.5 0-10-2.5-10-6 0 3.5 4.5 6 10 6s10-2.5 10-6c0 3.5-4.5 6-10 6z"
-        opacity="0.3"
-      />
-      <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61dafb" strokeWidth="1" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61dafb" strokeWidth="1" transform="rotate(60 12 12)" />
-      <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61dafb" strokeWidth="1" transform="rotate(120 12 12)" />
-    </svg>
-  ),
-  Vue: (
-    <svg viewBox="0 0 24 24" fill="#4fc08d">
-      <path d="M2,3H5.5L12,15L18.5,3H22L12,21L2,3Z" />
-    </svg>
-  ),
-  JavaScript: (
-    <svg viewBox="0 0 24 24" fill="#f7df1e">
-      <rect width="24" height="24" fill="#f7df1e" />
-      <path
-        d="M22.2,19.7c-0.6,1-1.5,1.7-3,1.7c-1.3,0-2.1-0.7-2.5-1.6l1.3-0.8c0.3,0.5,0.5,0.9,1.1,0.9c0.4,0,0.7-0.2,0.7-0.9V12h1.6v7.7H22.2z M16.1,19.7c-0.7,1.1-1.6,1.7-3.2,1.7c-1.5,0-2.5-0.8-3-1.9l1.3-0.8c0.3,0.6,0.8,1,1.5,1c0.6,0,1-0.3,1-0.7c0-0.5-0.4-0.7-1.1-1l-0.4-0.2c-1.1-0.5-1.8-1.1-1.8-2.4c0-1.2,0.9-2.1,2.4-2.1c1,0,1.8,0.4,2.3,1.3l-1.3,0.8c-0.3-0.5-0.6-0.7-1.1-0.7c-0.5,0-0.8,0.3-0.8,0.7c0,0.5,0.3,0.7,1,1l0.4,0.2c1.3,0.6,2,1.2,2,2.5C18.3,18.4,17.3,19.7,16.1,19.7z"
-        fill="#000"
-      />
-    </svg>
-  ),
-  TypeScript: (
-    <svg viewBox="0 0 24 24" fill="#3178c6">
-      <rect width="24" height="24" fill="#3178c6" />
-      <path
-        d="M1.5,6.5h4v1.5h-1.25v8.5h-1.5v-8.5h-1.25v-1.5zm6.5,0h1.5v10h-1.5v-10zm3,0h3.75c1.25,0,2.25,1,2.25,2.25v0.5c0,0.75-0.375,1.375-0.875,1.75c0.625,0.375,1.125,1,1.125,1.75v0.5c0,1.25-1,2.25-2.25,2.25h-3.75v-8.5h-0.25v-0.5zm1.5,1.5v2h2.25c0.375,0,0.75-0.375,0.75-0.75v-0.5c0-0.375-0.375-0.75-0.75-0.75h-2.25zm0,3.5v2h2.25c0.375,0,0.75-0.375,0.75-0.75v-0.5c0-0.375-0.375-0.75-0.75-0.75h-2.25z"
-        fill="#fff"
-      />
-    </svg>
-  ),
-  jQuery: (
-    <svg viewBox="0 0 24 24" fill="#0769ad">
-      <path d="M1.5,16.25c0,3.5,2.75,6.25,6.25,6.25c1.5,0,3-0.5,4.25-1.5c-1.25,0.75-2.75,1.25-4.25,1.25c-3.25,0-5.75-2.5-5.75-5.75c0-1.25,0.5-2.5,1.25-3.5c-1,1.25-1.5,2.75-1.5,4.25zm3.5-3.5c0,2.5,2,4.5,4.5,4.5c1,0,2-0.375,2.75-1c-0.75,0.5-1.75,0.75-2.75,0.75c-2.25,0-4-1.75-4-4c0-1,0.375-1.875,1-2.5c-0.75,0.75-1.25,1.75-1.25,2.75zm3.5-3.5c0,1.5,1.25,2.75,2.75,2.75c0.625,0,1.25-0.25,1.75-0.625c-0.5,0.25-1.125,0.375-1.75,0.375c-1.25,0-2.25-1-2.25-2.25c0-0.625,0.25-1.125,0.625-1.5c-0.5,0.5-0.875,1.125-0.875,1.75z" />
-    </svg>
-  ),
+  React: faReact,
+  Vue: faVuejs,
+  JavaScript: faJs,
+  TypeScript: faCode, // Using generic code icon for TypeScript
+  jQuery: faCode,
 
   // Styling
-  CSS: (
-    <svg viewBox="0 0 24 24" fill="#1572b6">
-      <path d="M5,3L4.35,6.34H17.94L17.5,8.5H3.92L3.26,11.83H16.85L16.09,15.64L10.61,17.45L5.86,15.64L6.19,14H2.85L2.06,18L9.91,21L18.96,18L20.16,11.97L20.4,10.76L21.94,3H5Z" />
-    </svg>
-  ),
-  SCSS: (
-    <svg viewBox="0 0 24 24" fill="#cf649a">
-      <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,18.5C9.5,18.5 7.5,16.5 7.5,14C7.5,11.5 9.5,9.5 12,9.5C14.5,9.5 16.5,11.5 16.5,14C16.5,16.5 14.5,18.5 12,18.5Z" />
-    </svg>
-  ),
-  Tailwind: (
-    <svg viewBox="0 0 24 24" fill="#06b6d4">
-      <path d="M12,6C9.33,6 7.67,7.33 7,10C8,8.67 9.17,8.17 10.5,8.5C11.26,8.67 11.81,9.22 12.41,9.83C13.39,10.8 14.56,12 17,12C19.67,12 21.33,10.67 22,8C21,9.33 19.83,9.83 18.5,9.5C17.74,9.33 17.19,8.78 16.59,8.17C15.61,7.2 14.44,6 12,6M7,12C4.33,12 2.67,13.33 2,16C3,14.67 4.17,14.17 5.5,14.5C6.26,14.67 6.81,15.22 7.41,15.83C8.39,16.8 9.56,18 12,18C14.67,18 16.33,16.67 17,14C16,15.33 14.83,15.83 13.5,15.5C12.74,15.33 12.19,14.78 11.59,14.17C10.61,13.2 9.44,12 7,12Z" />
-    </svg>
-  ),
+  CSS: faCode,
+  SCSS: faCode,
+  Tailwind: faCode,
 
   // Backend
-  PHP: (
-    <svg viewBox="0 0 24 24" fill="#777bb4">
-      <ellipse cx="12" cy="12" rx="11" ry="5" fill="#777bb4" />
-      <path
-        d="M3.5,9h2.5c1.5,0,2.5,1,2.5,2.5s-1,2.5-2.5,2.5h-1v2h-1.5v-7zm1.5,1.5v2h1c0.5,0,1-0.5,1-1s-0.5-1-1-1h-1zm6.5-1.5h1.5v3h1v-3h1.5v7h-1.5v-2.5h-1v2.5h-1.5v-7zm6.5,0h2.5c1.5,0,2.5,1,2.5,2.5s-1,2.5-2.5,2.5h-1v2h-1.5v-7zm1.5,1.5v2h1c0.5,0,1-0.5,1-1s-0.5-1-1-1h-1z"
-        fill="#fff"
-      />
-    </svg>
-  ),
-  'Node.js': (
-    <svg viewBox="0 0 24 24" fill="#339933">
-      <path d="M12,1.85C11.73,1.85 11.45,1.92 11.22,2.05L3.78,6.35C3.32,6.61 3,7.12 3,7.66V16.34C3,16.88 3.32,17.39 3.78,17.65L11.22,21.95C11.45,22.08 11.73,22.15 12,22.15C12.27,22.15 12.55,22.08 12.78,21.95L20.22,17.65C20.68,17.39 21,16.88 21,16.34V7.66C21,7.12 20.68,6.61 20.22,6.35L12.78,2.05C12.55,1.92 12.27,1.85 12,1.85Z" />
-    </svg>
-  ),
-  MySQL: (
-    <svg viewBox="0 0 24 24" fill="#4479a1">
-      <path d="M16.405,5.501C16.222,5.501 16.028,5.513 15.823,5.537C15.619,5.561 15.414,5.597 15.209,5.645C14.798,5.741 14.397,5.876 14.007,6.051C13.617,6.226 13.237,6.441 12.867,6.696C12.497,6.951 12.137,7.246 11.787,7.581C11.437,7.916 11.097,8.291 10.767,8.706C10.437,9.121 10.117,9.576 9.807,10.071C9.497,10.566 9.197,11.101 8.907,11.676C8.617,12.251 8.337,12.866 8.067,13.521C7.797,14.176 7.537,14.871 7.287,15.606L7.107,16.056L6.927,16.506L6.747,16.956L6.567,17.406L6.387,17.856L6.207,18.306L6.027,18.756L5.847,19.206L5.667,19.656L5.487,20.106L5.307,20.556L5.127,21.006C4.947,21.456 4.767,21.906 4.587,22.356C4.407,22.806 4.227,23.256 4.047,23.706C3.867,24.156 3.687,24.606 3.507,25.056C3.327,25.506 3.147,25.956 2.967,26.406C2.787,26.856 2.607,27.306 2.427,27.756C2.247,28.206 2.067,28.656 1.887,29.106C1.707,29.556 1.527,30.006 1.347,30.456C1.167,30.906 0.987,31.356 0.807,31.806C0.627,32.256 0.447,32.706 0.267,33.156C0.087,33.606 -0.093,34.056 -0.273,34.506C-0.453,34.956 -0.633,35.406 -0.813,35.856C-0.993,36.306 -1.173,36.756 -1.353,37.206C-1.533,37.656 -1.713,38.106 -1.893,38.556C-2.073,39.006 -2.253,39.456 -2.433,39.906C-2.613,40.356 -2.793,40.806 -2.973,41.256C-3.153,41.706 -3.333,42.156 -3.513,42.606" />
-    </svg>
-  ),
+  PHP: faPhp,
+  'Node.js': faNodeJs,
+  MySQL: faDatabase,
 
   // Services & APIs
-  Firebase: (
-    <svg viewBox="0 0 24 24" fill="#ffca28">
-      <path d="M5.8,21L7.4,4.9L10.7,9.7L5.8,21Z" />
-      <path d="M16.2,21L18.8,7.1L16.2,4.2L7.4,4.9L16.2,21Z" />
-      <path d="M5.8,21L16.2,21L12,17.8L5.8,21Z" />
-    </svg>
-  ),
-  Stripe: (
-    <svg viewBox="0 0 24 24" fill="#635bff">
-      <path d="M13.976,9.15C13.494,8.913 12.916,8.749 12.346,8.749C11.347,8.749 10.802,9.199 10.802,9.875C10.802,10.551 11.347,10.917 12.493,11.367C14.207,12.017 15.169,12.797 15.169,14.321C15.169,16.258 13.642,17.5 11.346,17.5C10.049,17.5 8.752,17.085 7.455,16.256L8.409,14.321C9.706,15.15 10.802,15.565 11.759,15.565C12.758,15.565 13.303,15.115 13.303,14.439C13.303,13.763 12.758,13.397 11.612,12.947C9.898,12.297 8.936,11.517 8.936,9.993C8.936,8.056 10.463,6.814 12.759,6.814C14.056,6.814 15.353,7.229 16.65,8.058L15.696,9.993C14.399,9.164 13.303,8.749 12.346,8.749Z" />
-    </svg>
-  ),
+  Firebase: faServer,
+  Stripe: faStripe,
+  Git: faGitAlt,
+  Docker: faDocker,
+  AWS: faAws,
+  WordPress: faWordpress,
+  Figma: faFigma,
 
-  // Default fallback
-  default: (
-    <svg viewBox="0 0 24 24" fill="#666">
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12,8 L12,16 M8,12 L16,12" stroke="#fff" strokeWidth="2" />
-    </svg>
-  ),
+  // Generic fallbacks
+  MongoDB: faDatabase,
+  PostgreSQL: faDatabase,
+  Redis: faDatabase,
+  GraphQL: faServer,
+  Webpack: faGear,
+  Bootstrap: faCode,
+  Photoshop: faPalette,
+  Illustrator: faPalette,
+  Sketch: faPalette,
+  Shopify: faServer,
+  Vercel: faServer,
+  Netlify: faServer,
+  HTML: faCode,
+  Liquid: faCode,
+  WooCommerce: faServer,
+  Angular: faCode,
+  'Framer Motion': faGear,
+  'Styled Components': faCode,
 };
 
 export default function TechIcon({ tech, size = 'md' }: TechIconProps) {
-  const logo = techLogos[tech] || techLogos.default;
+  const icon = techIcons[tech as keyof typeof techIcons] || faCode;
 
   return (
-    <span className={`${styles.techIcon} ${styles[`techIcon--${size}`]}`} title={tech} aria-label={tech}>
-      {logo}
-    </span>
+    <div className={`${styles.techIcon} ${styles[`techIcon--${size}`]}`} title={tech} aria-label={tech}>
+      <FAIcon icon={icon} size={size} variant="yellow-bg" />
+    </div>
   );
 }

@@ -8,6 +8,8 @@ import { Section } from '@/components/UI/Section/Section';
 import { Card } from '@/components/UI/Card/Card';
 import { Button } from '@/components/UI/Button/Button';
 import { Icon } from '@/components/UI/Icon/Icon';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import { faCode, faPalette, faBolt, faSearch, faRocket, faClipboardList, faCogs } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../services/services.module.scss';
 
 type Props = {
@@ -16,7 +18,7 @@ type Props = {
 
 const serviceData = {
   'Web Development': {
-    icon: '💻',
+    icon: faCode,
     gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     features: [
       'Modern React & Next.js applications',
@@ -28,7 +30,7 @@ const serviceData = {
     ],
   },
   'UI/UX & Design Systems': {
-    icon: '🎨',
+    icon: faPalette,
     gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     features: [
       'User-centered design approach',
@@ -40,7 +42,7 @@ const serviceData = {
     ],
   },
   'Performance & SEO': {
-    icon: '⚡',
+    icon: faBolt,
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     features: [
       'Core Web Vitals optimization',
@@ -52,7 +54,7 @@ const serviceData = {
     ],
   },
   'Consulting & Audits': {
-    icon: '🔍',
+    icon: faSearch,
     gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     features: [
       'Code quality assessment',
@@ -67,7 +69,7 @@ const serviceData = {
 
 const serviceDataUk = {
   'Веб-розробка': {
-    icon: '💻',
+    icon: faCode,
     gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     features: [
       'Сучасні додатки на React та Next.js',
@@ -79,7 +81,7 @@ const serviceDataUk = {
     ],
   },
   'UI/UX та дизайн-системи': {
-    icon: '🎨',
+    icon: faPalette,
     gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     features: [
       'Підхід, орієнтований на користувача',
@@ -91,7 +93,7 @@ const serviceDataUk = {
     ],
   },
   'Продуктивність та SEO': {
-    icon: '⚡',
+    icon: faBolt,
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     features: [
       'Оптимізація Core Web Vitals',
@@ -103,7 +105,7 @@ const serviceDataUk = {
     ],
   },
   'Консультації та аудити': {
-    icon: '🔍',
+    icon: faSearch,
     gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     features: [
       'Оцінка якості коду',
@@ -187,7 +189,7 @@ export default function ServicesPage({ params }: Props) {
             </div>
             <div className={styles.servicesPage__heroImage}>
               <div className={styles.servicesPage__imagePlaceholder}>
-                <span>🚀</span>
+                <FAIcon icon={faRocket} size="xl" variant="yellow-bg" />
               </div>
             </div>
           </div>
@@ -206,8 +208,8 @@ export default function ServicesPage({ params }: Props) {
                   className={styles.servicesPage__serviceCard}
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.2 }}>
-                  <div className={styles.servicesPage__serviceIcon} style={{ background: serviceInfo.gradient }}>
-                    <span>{serviceInfo.icon}</span>
+                  <div className={styles.servicesPage__serviceIcon}>
+                    <FAIcon icon={serviceInfo.icon} size="xl" variant="yellow-bg" />
                   </div>
                   <h3 className={styles.servicesPage__serviceTitle}>{service.title}</h3>
                   <p className={styles.servicesPage__serviceDescription}>{service.description}</p>
@@ -232,28 +234,28 @@ export default function ServicesPage({ params }: Props) {
           <div className={styles.servicesPage__processSteps}>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>📋</span>
+                <FAIcon icon={faClipboardList} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>{copy.servicesPage.discovery}</h3>
               <p className={styles.servicesPage__stepDescription}>{copy.servicesPage.discoveryDescription}</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>🎨</span>
+                <FAIcon icon={faPalette} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>{copy.servicesPage.design}</h3>
               <p className={styles.servicesPage__stepDescription}>{copy.servicesPage.designDescription}</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>⚙️</span>
+                <FAIcon icon={faCogs} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>{copy.servicesPage.development}</h3>
               <p className={styles.servicesPage__stepDescription}>{copy.servicesPage.developmentDescription}</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>🚀</span>
+                <FAIcon icon={faRocket} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>{copy.servicesPage.launch}</h3>
               <p className={styles.servicesPage__stepDescription}>{copy.servicesPage.launchDescription}</p>

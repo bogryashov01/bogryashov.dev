@@ -5,12 +5,14 @@ import { Section } from '@/components/UI/Section/Section';
 import { Card } from '@/components/UI/Card/Card';
 import { Button } from '@/components/UI/Button/Button';
 import { Icon } from '@/components/UI/Icon/Icon';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import { faCode, faPalette, faBolt, faSearch, faRocket, faClipboardList, faCogs } from '@fortawesome/free-solid-svg-icons';
 import { COPY } from '@/lib/copy';
 import styles from './services.module.scss';
 
 const serviceData = {
   'Web Development': {
-    icon: '💻',
+    icon: faCode,
     gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     features: [
       'Modern React & Next.js applications',
@@ -22,7 +24,7 @@ const serviceData = {
     ],
   },
   'UI/UX & Design Systems': {
-    icon: '🎨',
+    icon: faPalette,
     gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     features: [
       'User-centered design approach',
@@ -34,7 +36,7 @@ const serviceData = {
     ],
   },
   'Performance & SEO': {
-    icon: '⚡',
+    icon: faBolt,
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     features: [
       'Core Web Vitals optimization',
@@ -46,7 +48,7 @@ const serviceData = {
     ],
   },
   'Consulting & Audits': {
-    icon: '🔍',
+    icon: faSearch,
     gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     features: [
       'Code quality assessment',
@@ -100,7 +102,7 @@ export default function ServicesPage() {
             </div>
             <div className={styles.servicesPage__heroImage}>
               <div className={styles.servicesPage__imagePlaceholder}>
-                <span>🚀</span>
+                <FAIcon icon={faRocket} size="xl" variant="yellow-bg" />
               </div>
             </div>
           </div>
@@ -119,8 +121,8 @@ export default function ServicesPage() {
                   className={styles.servicesPage__serviceCard}
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.2 }}>
-                  <div className={styles.servicesPage__serviceIcon} style={{ background: serviceInfo.gradient }}>
-                    <span>{serviceInfo.icon}</span>
+                  <div className={styles.servicesPage__serviceIcon}>
+                    <FAIcon icon={serviceInfo.icon} size="xl" variant="yellow-bg" />
                   </div>
                   <h3 className={styles.servicesPage__serviceTitle}>{service.title}</h3>
                   <p className={styles.servicesPage__serviceDescription}>{service.description}</p>
@@ -145,28 +147,28 @@ export default function ServicesPage() {
           <div className={styles.servicesPage__processSteps}>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>📋</span>
+                <FAIcon icon={faClipboardList} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>Discovery</h3>
               <p className={styles.servicesPage__stepDescription}>Understanding your goals, requirements, and target audience</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>🎨</span>
+                <FAIcon icon={faPalette} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>Design</h3>
               <p className={styles.servicesPage__stepDescription}>Creating wireframes, prototypes, and visual designs</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>⚙️</span>
+                <FAIcon icon={faCogs} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>Development</h3>
               <p className={styles.servicesPage__stepDescription}>Building with modern technologies and best practices</p>
             </div>
             <div className={styles.servicesPage__processStep}>
               <div className={styles.servicesPage__stepIcon}>
-                <span>🚀</span>
+                <FAIcon icon={faRocket} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.servicesPage__stepTitle}>Launch</h3>
               <p className={styles.servicesPage__stepDescription}>Testing, deployment, and ongoing support</p>

@@ -8,6 +8,8 @@ import { Section } from '@/components/UI/Section/Section';
 import { Card } from '@/components/UI/Card/Card';
 import { Button } from '@/components/UI/Button/Button';
 import { Icon } from '@/components/UI/Icon/Icon';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import { faComments, faBolt, faLightbulb, faClipboardList, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../contact/contact.module.scss';
 
 type Props = {
@@ -101,7 +103,7 @@ export default function ContactPage({ params }: Props) {
             </div>
             <div className={styles.contactPage__heroImage}>
               <div className={styles.contactPage__imagePlaceholder}>
-                <span>💬</span>
+                <FAIcon icon={faComments} size="xl" variant="yellow-bg" />
               </div>
             </div>
           </div>
@@ -149,7 +151,7 @@ export default function ContactPage({ params }: Props) {
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.2 }}>
               <div className={styles.contactPage__expectationIcon}>
-                <span>⚡</span>
+                <FAIcon icon={faBolt} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.contactPage__expectationTitle}>{copy.contact.quickResponse}</h3>
               <p className={styles.contactPage__expectationDescription}>{copy.contact.quickResponseDescription}</p>
@@ -161,7 +163,7 @@ export default function ContactPage({ params }: Props) {
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.2 }}>
               <div className={styles.contactPage__expectationIcon}>
-                <span>💡</span>
+                <FAIcon icon={faLightbulb} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.contactPage__expectationTitle}>{copy.contact.freeConsultation}</h3>
               <p className={styles.contactPage__expectationDescription}>{copy.contact.freeConsultationDescription}</p>
@@ -173,7 +175,7 @@ export default function ContactPage({ params }: Props) {
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.2 }}>
               <div className={styles.contactPage__expectationIcon}>
-                <span>📋</span>
+                <FAIcon icon={faClipboardList} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.contactPage__expectationTitle}>{copy.contact.detailedProposal}</h3>
               <p className={styles.contactPage__expectationDescription}>{copy.contact.detailedProposalDescription}</p>
@@ -185,7 +187,7 @@ export default function ContactPage({ params }: Props) {
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.2 }}>
               <div className={styles.contactPage__expectationIcon}>
-                <span>🔍</span>
+                <FAIcon icon={faSearch} size="lg" variant="yellow-bg" />
               </div>
               <h3 className={styles.contactPage__expectationTitle}>{copy.contact.transparency}</h3>
               <p className={styles.contactPage__expectationDescription}>{copy.contact.transparencyDescription}</p>

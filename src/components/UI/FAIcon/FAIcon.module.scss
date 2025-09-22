@@ -1,0 +1,72 @@
+// FAIcon Component Styles
+$bg-primary: #0f1114;
+$text-primary: #f2f5f7;
+$accent-primary: #f5c542;
+$accent-hover: #ffd24d;
+$border-color: #252c34;
+$transition-base: 0.2s ease;
+
+.faIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all $transition-base;
+
+  // Default variant - just the icon
+  &.default {
+    color: $text-primary;
+  }
+
+  // Yellow background variant
+  &.yellow-bg {
+    background-color: $accent-primary;
+    color: $bg-primary;
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: $accent-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($accent-primary, 0.3);
+    }
+  }
+
+  // Ghost variant with border
+  &.ghost {
+    background-color: transparent;
+    color: $accent-primary;
+    border: 2px solid $accent-primary;
+
+    &:hover {
+      background-color: $accent-primary;
+      color: $bg-primary;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($accent-primary, 0.3);
+    }
+  }
+
+  // Sizes
+  &.sm {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  &.md {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  &.lg {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+
+  &.xl {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+  }
+}

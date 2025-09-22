@@ -210,9 +210,10 @@ $font-size-5xl: 48px;
   }
 
   &__expectationIcon {
-    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: $spacing-md;
-    display: block;
   }
 
   &__expectationTitle {

@@ -4,17 +4,19 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { getCopy } from '@/lib/copy';
 import { type Locale } from '@/i18n/config';
+import FAIcon from '@/components/UI/FAIcon/FAIcon';
+import { faCode, faPalette, faBolt, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from './ServicesGrid.module.scss';
 
 const icons = {
-  'Web Development': '💻',
-  'UI/UX & Design Systems': '🎨',
-  'Performance & SEO': '⚡',
-  'Consulting & Audits': '🔍',
-  'Веб-розробка': '💻',
-  'UI/UX та дизайн-системи': '🎨',
-  'Продуктивність та SEO': '⚡',
-  'Консультації та аудити': '🔍',
+  'Web Development': faCode,
+  'UI/UX & Design Systems': faPalette,
+  'Performance & SEO': faBolt,
+  'Consulting & Audits': faSearch,
+  'Веб-розробка': faCode,
+  'UI/UX та дизайн-системи': faPalette,
+  'Продуктивність та SEO': faBolt,
+  'Консультації та аудити': faSearch,
 };
 
 type Props = {
@@ -65,7 +67,9 @@ export default function ServicesGrid({ locale = 'en' }: Props) {
       {copy.services.map((service) => (
         <motion.div key={service.title} variants={itemVariants} className={styles.servicesGrid__item}>
           <div className={styles.servicesGrid__card}>
-            <div className={styles.servicesGrid__icon}>{icons[service.title as keyof typeof icons]}</div>
+            <div className={styles.servicesGrid__icon}>
+              <FAIcon icon={icons[service.title as keyof typeof icons]} size="lg" variant="yellow-bg" />
+            </div>
             <h3 className={styles.servicesGrid__title}>{service.title}</h3>
             <p className={styles.servicesGrid__description}>{service.description}</p>
           </div>
