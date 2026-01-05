@@ -26,52 +26,52 @@ type Props = {
 };
 
 const serviceData = {
-  'Web Development': {
+  'CRMs & Business Tools': {
     icon: faCode,
     gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     features: [
-      'Modern React & Next.js applications',
-      'TypeScript for type safety',
-      'Responsive design for all devices',
-      'API integration and data management',
-      'Database design and optimization',
-      'Version control and deployment',
+      'Custom CRM architecture and data modeling',
+      'User workflow design and optimization',
+      'System integration and API development',
+      'Scalable database design',
+      'Role-based access and permissions',
+      'Reporting and analytics systems',
     ],
   },
-  'UI/UX & Design Systems': {
+  'Dashboards & SaaS Interfaces': {
     icon: faPalette,
     gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     features: [
-      'User-centered design approach',
-      'Design system creation',
-      'Component library development',
-      'Accessibility compliance (WCAG 2.1)',
-      'User testing and research',
-      'Prototyping and wireframing',
+      'Data visualization and charting systems',
+      'Real-time data updates and WebSocket integration',
+      'Performance-optimized interfaces',
+      'Component-based architecture',
+      'Responsive design for all devices',
+      'User experience optimization',
     ],
   },
-  'Performance & SEO': {
+  'System Architecture': {
     icon: faBolt,
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     features: [
-      'Core Web Vitals optimization',
-      'Lighthouse score improvement',
-      'SEO strategy and implementation',
-      'Structured data markup',
-      'Image and asset optimization',
-      'Caching and CDN setup',
+      'Database schema design and optimization',
+      'API structure and endpoint design',
+      'Component organization and patterns',
+      'Scalability planning and implementation',
+      'Code architecture and maintainability',
+      'Technical strategy and planning',
     ],
   },
-  'Consulting & Audits': {
+  'Product Engineering': {
     icon: faSearch,
     gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     features: [
-      'Code quality assessment',
-      'Performance audits',
-      'Security vulnerability scanning',
-      'Accessibility compliance review',
-      'SEO analysis and recommendations',
-      'Technical strategy planning',
+      'Full-stack product development',
+      'Engineering decision-making',
+      'Technical strategy and planning',
+      'Long-term maintainability focus',
+      'Code quality and best practices',
+      'System reliability and monitoring',
     ],
   },
 };

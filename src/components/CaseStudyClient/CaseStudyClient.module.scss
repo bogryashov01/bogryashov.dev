@@ -362,4 +362,37 @@ $transition-base: 0.2s ease;
       }
     }
   }
+
+  &__legacyNote {
+    font-size: $font-size-sm;
+    color: $text-muted;
+    line-height: 1.5;
+    font-style: italic;
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
+    border-top: 1px solid $border-color;
+  }
+
+  &__cta {
+    background: $bg-surface-1;
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+    padding: $spacing-2xl;
+    text-align: center;
+    margin-top: $spacing-3xl;
+  }
+
+  &__ctaTitle {
+    font-size: $font-size-2xl;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  &__ctaSubtitle {
+    font-size: $font-size-base;
+    color: $text-muted;
+    margin-bottom: $spacing-xl;
+    line-height: 1.6;
+  }
 }

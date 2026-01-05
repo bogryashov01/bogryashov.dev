@@ -34,8 +34,12 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
       projectGoals: string;
       myContribution: string;
       outcome: string;
+      businessOutcome: string;
+      technicalOutcome: string;
       challengesAndSolutions: string;
       results: string;
+      discussProject: string;
+      discussProjectSubtitle: string;
     };
     categories: Record<string, string>;
     categoryFilters: Record<string, string>;
@@ -121,6 +125,13 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
                 <div className={styles.caseStudy__sidebarItem}>
                   <TechStack technologies={project.tags} title={copy.caseStudy.technologies} />
                 </div>
+                {((locale === 'uk' && project.legacyStackNote_uk) || project.legacyStackNote) && (
+                  <div className={styles.caseStudy__sidebarItem}>
+                    <p className={styles.caseStudy__legacyNote}>
+                      {locale === 'uk' && project.legacyStackNote_uk ? project.legacyStackNote_uk : project.legacyStackNote}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -161,15 +172,58 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
               </div>
             )}
 
-            {((locale === 'uk' && project.outcome_uk) || project.outcome) && (
+            {/* Legacy outcome support */}
+            {((locale === 'uk' && project.outcome_uk) || project.outcome) &&
+              !(locale === 'uk' ? project.businessOutcome_uk : project.businessOutcome) && (
+                <div className={styles.caseStudy__section}>
+                  <h2 className={styles.caseStudy__sectionTitle}>{copy.caseStudy.outcome}</h2>
+                  <ul className={styles.caseStudy__list}>
+                    {(locale === 'uk' && project.outcome_uk ? project.outcome_uk : project.outcome || []).map((result, index) => (
+                      <li key={index} className={styles.caseStudy__listItem}>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {project.images && project.images.length > 1 && (
+                    <div className={styles.caseStudy__outcomeImages}>
+                      {project.images.slice(1, 3).map((image, index) => (
+                        <div key={index} className={styles.caseStudy__outcomeImage}>
+                          <Image src={image} alt={`${project.title} - Image ${index + 2}`} width={400} height={300} />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+            {/* Split outcomes */}
+            {((locale === 'uk' && project.businessOutcome_uk) || project.businessOutcome) && (
               <div className={styles.caseStudy__section}>
-                <h2 className={styles.caseStudy__sectionTitle}>{copy.caseStudy.outcome}</h2>
+                <h2 className={styles.caseStudy__sectionTitle}>{copy.caseStudy.businessOutcome}</h2>
                 <ul className={styles.caseStudy__list}>
-                  {(locale === 'uk' && project.outcome_uk ? project.outcome_uk : project.outcome || []).map((result, index) => (
-                    <li key={index} className={styles.caseStudy__listItem}>
-                      {result}
-                    </li>
-                  ))}
+                  {(locale === 'uk' && project.businessOutcome_uk ? project.businessOutcome_uk : project.businessOutcome || []).map(
+                    (result, index) => (
+                      <li key={index} className={styles.caseStudy__listItem}>
+                        {result}
+                      </li>
+                    ),
+                  )}
+                </ul>
+              </div>
+            )}
+
+            {((locale === 'uk' && project.technicalOutcome_uk) || project.technicalOutcome) && (
+              <div className={styles.caseStudy__section}>
+                <h2 className={styles.caseStudy__sectionTitle}>{copy.caseStudy.technicalOutcome}</h2>
+                <ul className={styles.caseStudy__list}>
+                  {(locale === 'uk' && project.technicalOutcome_uk ? project.technicalOutcome_uk : project.technicalOutcome || []).map(
+                    (result, index) => (
+                      <li key={index} className={styles.caseStudy__listItem}>
+                        {result}
+                      </li>
+                    ),
+                  )}
                 </ul>
 
                 {project.images && project.images.length > 1 && (
@@ -183,6 +237,17 @@ export default function CaseStudyClient({ project, nextProject, locale = 'en' }:
                 )}
               </div>
             )}
+
+            {/* CTA Section */}
+            <div className={styles.caseStudy__section}>
+              <div className={styles.caseStudy__cta}>
+                <h3 className={styles.caseStudy__ctaTitle}>{copy.caseStudy.discussProject}</h3>
+                <p className={styles.caseStudy__ctaSubtitle}>{copy.caseStudy.discussProjectSubtitle}</p>
+                <Button as="link" href={`/${locale}/contact`} size="lg">
+                  {copy.caseStudy.discussProject}
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

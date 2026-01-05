@@ -9,10 +9,10 @@ import { faCode, faPalette, faBolt, faSearch } from '@fortawesome/free-solid-svg
 import styles from './ServicesGrid.module.scss';
 
 const icons = {
-  'Web Development': faCode,
-  'UI/UX & Design Systems': faPalette,
-  'Performance & SEO': faBolt,
-  'Consulting & Audits': faSearch,
+  'CRMs & Business Tools': faCode,
+  'Dashboards & SaaS Interfaces': faPalette,
+  'System Architecture': faBolt,
+  'Product Engineering': faSearch,
   'Веб-розробка': faCode,
   'UI/UX та дизайн-системи': faPalette,
   'Продуктивність та SEO': faBolt,

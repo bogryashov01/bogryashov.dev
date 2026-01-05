@@ -15,10 +15,11 @@ type Props = {
 export default function Hero({ locale = 'en' }: Props) {
   const [copy, setCopy] = useState<{
     hero: {
-      h1: string;
+      h1: string | string[];
       sub: string;
       ctaPrimary: string;
       ctaSecondary: string;
+      availability?: string;
     };
     clients: string[];
   } | null>(null);
@@ -30,13 +31,14 @@ export default function Hero({ locale = 'en' }: Props) {
   // Fallback values to prevent hydration mismatch
   const fallbackCopy = {
     hero: {
-      h1: locale === 'uk' ? 'Чистий дизайн. Реальні результати.' : 'Clean design. Real results.',
+      h1: locale === 'uk' ? ['Чистий дизайн.', 'Реальні результати.'] : ['Product-focused engineer.', 'Building CRMs, dashboards, SaaS.'],
       sub:
         locale === 'uk'
           ? 'Я створюю високопродуктивні, доступні веб-сайти, які легко підтримувати та масштабувати.'
-          : 'I build high-performance, accessible websites that are easy to maintain and scale.',
-      ctaPrimary: locale === 'uk' ? 'Почати проект' : 'Start a project',
-      ctaSecondary: locale === 'uk' ? 'Переглянути роботи' : 'View my work',
+          : 'I design and build scalable systems for SaaS founders and product teams. Available for contract work and product discussions.',
+      ctaPrimary: locale === 'uk' ? 'Почати проект' : "Let's talk",
+      ctaSecondary: locale === 'uk' ? 'Переглянути роботи' : 'View selected work',
+      availability: locale === 'uk' ? 'Доступний для контрактної роботи та обговорення продуктів' : 'Available for contract work and product discussions',
     },
     clients:
       locale === 'uk'
@@ -78,10 +80,20 @@ export default function Hero({ locale = 'en' }: Props) {
             </Button>
           </motion.div>
 
+          {currentCopy.hero.availability && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 5.1 }}
+              className={styles.hero__availability}>
+              {currentCopy.hero.availability}
+            </motion.p>
+          )}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 5.1 }}
+            transition={{ duration: 0.6, delay: 5.4 }}
             className={styles.hero__clients}>
             {currentCopy.clients.map((client, index) => (
               <span key={client} className={styles.hero__client}>

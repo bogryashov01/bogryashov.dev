@@ -113,4 +113,11 @@ $transition-base: 0.2s ease;
     margin: 0 $spacing-sm;
     color: $border-color;
   }
+
+  &__availability {
+    font-size: $font-size-sm;
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+    font-style: italic;
+  }
 }

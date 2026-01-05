@@ -1,27 +1,28 @@
 {
   "hero": {
-    "h1": ["Clear design.", "Real outcomes."],
-    "sub": "I build high-performance, accessible websites that are easy to maintain and scale.",
-    "ctaPrimary": "Start a project",
-    "ctaSecondary": "View my work"
+    "h1": ["Product-focused engineer.", "Building CRMs, dashboards, SaaS."],
+    "sub": "I design and build scalable systems for SaaS founders and product teams. Available for contract work and product discussions.",
+    "ctaPrimary": "Let's talk",
+    "ctaSecondary": "View selected work",
+    "availability": "Available for contract work and product discussions"
   },
   "clients": ["GCL Privé", "La Coiffe", "Al Bacio", "Bonds", "MarinhoSteel", "VentiClean"],
   "services": [
     {
-      "title": "Web Development",
-      "description": "Modern, maintainable websites built with the latest technologies and best practices."
+      "title": "CRMs & Business Tools",
+      "description": "Custom CRM systems and internal business tools built for scalability and maintainability. Focus on data architecture, user workflows, and system integration."
     },
     {
-      "title": "UI/UX & Design Systems",
-      "description": "Consistent design, tokens, and components that create cohesive user experiences."
+      "title": "Dashboards & SaaS Interfaces",
+      "description": "Data visualization dashboards and SaaS product interfaces. Emphasis on performance, real-time updates, and intuitive user experience."
     },
     {
-      "title": "Performance & SEO",
-      "description": "Core Web Vitals optimization, accessibility compliance, and structured data implementation."
+      "title": "System Architecture",
+      "description": "Designing and implementing scalable system architectures. Database design, API structure, component organization, and maintainable code patterns."
     },
     {
-      "title": "Consulting & Audits",
-      "description": "Design system audits, code reviews, and technical strategy for existing projects."
+      "title": "Product Engineering",
+      "description": "Full-stack product development with focus on engineering decisions, technical strategy, and long-term maintainability."
     }
   ],
   "testimonials": [
@@ -73,31 +74,31 @@
     ]
   },
   "contact": {
-    "title": "Let's Work Together",
-    "description": "Ready to bring your ideas to life? Whether you have a specific project in mind or just want to explore possibilities, I'm here to help you create something amazing with clean, efficient solutions.",
+    "title": "Let's Discuss Your Product",
+    "description": "Building a CRM, dashboard, SaaS interface, or internal tool? Available for contract work and product discussions. Let's talk about architecture, scalability, and how to structure your system.",
     "sendEmail": "Send Email",
     "telegram": "Telegram",
     "getInTouch": "Get in Touch",
     "emailTitle": "Email",
-    "emailDescription": "For detailed project discussions and formal inquiries",
+    "emailDescription": "For product discussions, technical questions, and contract inquiries",
     "telegramTitle": "Telegram",
-    "telegramDescription": "Quick questions and casual conversations",
+    "telegramDescription": "Quick questions and casual product discussions",
     "whatToExpect": "What to Expect",
     "quickResponse": "Quick Response",
     "quickResponseDescription": "I'll get back to you within 24 hours, usually much sooner",
-    "freeConsultation": "Free Consultation",
-    "freeConsultationDescription": "Initial discussion about your project at no cost",
-    "detailedProposal": "Detailed Proposal",
-    "detailedProposalDescription": "Comprehensive project plan with timeline and pricing",
+    "freeConsultation": "Product Discussion",
+    "freeConsultationDescription": "Initial conversation about your product, system architecture, or contract work",
+    "detailedProposal": "Technical Approach",
+    "detailedProposalDescription": "Discussion of technical approach, architecture, and implementation strategy",
     "transparency": "Transparency",
-    "transparencyDescription": "Clear communication and honest feedback throughout",
-    "readyToStart": "Ready to Get Started?",
-    "readyToStartDescription": "Let's discuss your project and see how we can work together to achieve your goals.",
-    "startProject": "Start a Project",
+    "transparencyDescription": "Clear communication about technical decisions and project approach",
+    "readyToStart": "Interested in discussing your product?",
+    "readyToStartDescription": "Whether it's a CRM, dashboard, SaaS interface, or internal tool, let's discuss how we can build it together.",
+    "startProject": "Let's talk",
     "quickChat": "Quick Chat",
     "email": "bogryashov.dev@gmail.com",
-    "cta": "Let's discuss your project",
-    "ctaSubtitle": "Ready to bring your vision to life? Let's discuss your project and create something amazing together."
+    "cta": "Let's discuss your product",
+    "ctaSubtitle": "Building a CRM, dashboard, SaaS interface, or internal tool? Let's discuss architecture, scalability, and how to structure your system."
   },
   "work": {
     "title": "Work",
@@ -108,21 +109,21 @@
   },
   "servicesPage": {
     "title": "Services",
-    "subtitle": "From stunning user interfaces to robust backend systems, I deliver comprehensive web development services tailored to your business needs. Let's build something amazing together.",
-    "whatIOffer": "What I Offer",
+    "subtitle": "I build systems that solve product problems. CRMs, dashboards, SaaS interfaces, and internal tools. Focused on architecture, scalability, and maintainability.",
+    "whatIOffer": "What I Build",
     "howIWork": "How I Work",
     "discovery": "Discovery",
-    "discoveryDescription": "Understanding your goals, requirements, and target audience",
+    "discoveryDescription": "Understanding your product goals, technical requirements, and user needs",
     "design": "Design",
-    "designDescription": "Creating wireframes, prototypes, and visual designs",
+    "designDescription": "Designing system architecture, user flows, and component structures",
     "development": "Development",
-    "developmentDescription": "Building with modern technologies and best practices",
+    "developmentDescription": "Building scalable systems with clean code and maintainable architecture",
     "launch": "Launch",
-    "launchDescription": "Testing, deployment, and ongoing support",
-    "readyToStart": "Ready to Get Started?",
-    "readyToStartDescription": "Let's discuss your project requirements and create a solution that exceeds your expectations.",
-    "startProject": "Start a Project",
-    "viewMyWork": "View My Work"
+    "launchDescription": "Deployment, monitoring, and ensuring system reliability",
+    "readyToStart": "Not sure what solution fits your case?",
+    "readyToStartDescription": "Let's talk and figure out the right approach for your product or system.",
+    "startProject": "Let's talk",
+    "viewMyWork": "View Selected Work"
   },
   "aboutPage": {
     "title": "About",
@@ -196,20 +197,25 @@
     "projectGoals": "Project Goals",
     "myContribution": "My Contribution",
     "outcome": "Outcome",
+    "businessOutcome": "Business Outcome",
+    "technicalOutcome": "Technical / Product Outcome",
     "challengesAndSolutions": "Challenges & Solutions",
-    "results": "Results"
+    "results": "Results",
+    "discussProject": "Interested in a similar system or product?",
+    "discussProjectSubtitle": "Let's discuss your project and explore how we can build it together."
   },
   "homepage": {
     "selectedWork": "Selected Work",
     "selectedWorkSubtitle": "A showcase of recent projects across different industries and use cases.",
     "viewAllWork": "View all work",
     "servicesTitle": "Services",
-    "servicesSubtitle": "Comprehensive web development services tailored to your business needs."
+    "servicesSubtitle": "Comprehensive web development services tailored to your business needs.",
+    "microCta": "Available for contract work and product discussions."
   },
   "meta": {
-    "title": "bogryashovDev - Clean code. Clear design. Real outcomes.",
-    "description": "I build high-performance, accessible websites that are easy to maintain and scale. Specializing in Next.js, React, and modern web technologies.",
-    "keywords": "web development, frontend developer, Next.js, React, TypeScript, web design, accessibility, performance optimization"
+    "title": "Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards",
+    "description": "Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.",
+    "keywords": "frontend engineer, fullstack engineer, CRM development, SaaS interfaces, dashboard development, product engineer, contract developer, React, Next.js, TypeScript"
   },
   "nav": {
     "home": "Home",

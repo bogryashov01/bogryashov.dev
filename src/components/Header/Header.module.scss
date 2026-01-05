@@ -25,10 +25,12 @@ $transition-base: 0.2s ease;
   left: 0;
   right: 0;
   z-index: 50;
+  background-color: rgba($bg-primary, 0.95);
+  backdrop-filter: blur(12px);
   transition: all $transition-base;
 
   &.scrolled {
-    background-color: rgba($bg-primary, 0.8);
+    background-color: rgba($bg-primary, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid $border-color;
   }

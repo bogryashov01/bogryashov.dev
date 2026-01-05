@@ -21,10 +21,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const copy = await getCopy(resolvedParams.locale);
+  const baseUrl = 'https://bogryashov.dev';
+  const localePrefix = resolvedParams.locale === 'uk' ? '/uk' : '';
 
   return {
-    title: copy.meta.title,
-    description: copy.meta.description,
+    title: {
+      default: resolvedParams.locale === 'uk' 
+        ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
+        : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
+      template: '%s | Product-Focused Frontend Engineer',
+    },
+    description: resolvedParams.locale === 'uk'
+      ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
+      : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
     keywords: copy.meta.keywords,
     authors: [{ name: 'Vladimir Bogryashov' }],
     creator: 'Vladimir Bogryashov',
@@ -34,9 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://bogryashov.dev'),
+    metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: '/',
+      canonical: `${baseUrl}${localePrefix}`,
       languages: {
         en: '/',
         uk: '/uk',
@@ -45,24 +54,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: resolvedParams.locale === 'uk' ? 'uk_UA' : 'en_US',
-      url: 'https://bogryashov.dev',
-      title: copy.meta.title,
-      description: copy.meta.description,
+      url: `${baseUrl}${localePrefix}`,
+      title: resolvedParams.locale === 'uk'
+        ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
+        : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
+      description: resolvedParams.locale === 'uk'
+        ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
+        : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
       siteName: 'bogryashovDev',
       images: [
         {
-          url: '/og.png',
+          url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: copy.meta.title,
+          alt: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: copy.meta.title,
-      description: copy.meta.description,
-      images: ['/og.png'],
+      title: resolvedParams.locale === 'uk'
+        ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
+        : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
+      description: resolvedParams.locale === 'uk'
+        ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
+        : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
+      images: [`${baseUrl}/og.png`],
       creator: '@bogryashovdev',
     },
     robots: {

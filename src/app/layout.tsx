@@ -6,9 +6,12 @@ import { COPY } from '@/lib/copy';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'bogryashovDev - Clear design. Real outcomes.',
+  title: {
+    default: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
+    template: '%s | Product-Focused Frontend Engineer',
+  },
   description:
-    'I build high-performance, accessible websites that are easy to maintain and scale. Specializing in Next.js, React, and modern web technologies.',
+    'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
   keywords: COPY.meta.keywords,
   authors: [{ name: 'Vladimir Bogryashov' }],
   creator: 'Vladimir Bogryashov',
@@ -30,24 +33,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://bogryashov.dev',
-    title: 'bogryashovDev - Clear design. Real outcomes.',
+    title: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
     description:
-      'I build high-performance, accessible websites that are easy to maintain and scale. Specializing in Next.js, React, and modern web technologies.',
+      'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
     siteName: 'bogryashovDev',
     images: [
       {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'bogryashovDev - Clear design. Real outcomes.',
+        alt: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'bogryashovDev - Clear design. Real outcomes.',
+    title: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
     description:
-      'I build high-performance, accessible websites that are easy to maintain and scale. Specializing in Next.js, React, and modern web technologies.',
+      'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
     images: ['/og.png'],
     creator: '@bogryashovdev',
   },
