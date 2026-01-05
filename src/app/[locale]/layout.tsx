@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateStaticParams() {
@@ -20,18 +20,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const copy = await getCopy(resolvedParams.locale);
+  const locale = resolvedParams.locale as Locale;
+  const copy = await getCopy(locale);
   const baseUrl = 'https://bogryashov.dev';
-  const localePrefix = resolvedParams.locale === 'uk' ? '/uk' : '';
+  const localePrefix = locale === 'uk' ? '/uk' : '';
 
   return {
     title: {
-      default: resolvedParams.locale === 'uk' 
+      default: locale === 'uk' 
         ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
         : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
       template: '%s | Product-Focused Frontend Engineer',
     },
-    description: resolvedParams.locale === 'uk'
+    description: locale === 'uk'
       ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
       : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
     keywords: copy.meta.keywords,
@@ -53,12 +54,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       type: 'website',
-      locale: resolvedParams.locale === 'uk' ? 'uk_UA' : 'en_US',
+      locale: locale === 'uk' ? 'uk_UA' : 'en_US',
       url: `${baseUrl}${localePrefix}`,
-      title: resolvedParams.locale === 'uk'
+      title: locale === 'uk'
         ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
         : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-      description: resolvedParams.locale === 'uk'
+      description: locale === 'uk'
         ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
         : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
       siteName: 'bogryashovDev',
@@ -73,10 +74,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: resolvedParams.locale === 'uk'
+      title: locale === 'uk'
         ? 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards'
         : 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-      description: resolvedParams.locale === 'uk'
+      description: locale === 'uk'
         ? 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.'
         : 'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
       images: [`${baseUrl}/og.png`],
@@ -101,8 +102,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const resolvedParams = await params;
+  const locale = resolvedParams.locale as Locale;
   return (
-    <html lang={resolvedParams.locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#0F1114" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -110,9 +112,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
-        <Header locale={resolvedParams.locale} />
+        <Header locale={locale} />
         {children}
-        <Footer locale={resolvedParams.locale} />
+        <Footer locale={locale} />
         <ScrollToTop />
       </body>
     </html>
