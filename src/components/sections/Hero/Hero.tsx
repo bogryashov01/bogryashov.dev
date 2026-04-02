@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Button from '@/components/ui/Button/Button';
-import Container from '@/components/ui/Container/Container';
+
+import Button from '../../ui/Button/Button';
+import Container from '../../ui/Container/Container';
 import HeroBackdrop from './components/HeroBackdrop/HeroBackdrop';
-import styles from './Hero.module.scss';
 import ExpertiseStrip from '../ExpertiseStrip/ExpertiseStrip';
+
+import styles from './Hero.module.scss';
 
 export default function Hero() {
   return (

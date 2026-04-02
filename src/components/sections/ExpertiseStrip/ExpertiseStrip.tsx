@@ -1,5 +1,6 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
-import Section from '@/components/ui/Section/Section';
+import Reveal from '../../ui/Reveal/Reveal';
+import Section from '../../ui/Section/Section';
+
 import styles from './ExpertiseStrip.module.scss';
 
 const expertiseItems = ['SaaS Platforms', 'CRM Systems', 'Dashboards', 'LMS Products', 'E-commerce', 'Business Websites'];
