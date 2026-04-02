@@ -1,74 +1,42 @@
-import { ButtonHTMLAttributes, AnchorHTMLAttributes, forwardRef } from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import type { Route } from 'next';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import styles from './Button.module.scss';
 
-type ButtonVariant = 'primary' | 'ghost' | 'outline' | 'secondary';
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-interface BaseButtonProps {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+type BaseProps = {
+  children: ReactNode;
+  variant?: 'primary' | 'secondary';
+  size?: 'md' | 'lg';
   className?: string;
-  disabled?: boolean;
-}
+};
 
-interface ButtonAsButtonProps extends BaseButtonProps, Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
-  as?: 'button';
-  href?: never;
-  children: React.ReactNode;
-}
-
-interface ButtonAsLinkProps extends BaseButtonProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'children'> {
+type LinkProps = BaseProps & {
   as: 'link';
-  href: string;
-  external?: boolean;
-  children: React.ReactNode;
-}
+  href: Route;
+};
 
-type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
+type NativeButtonProps = BaseProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    as?: 'button';
+    href?: never;
+  };
 
-const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, as = 'button', ...props }, ref) => {
-    const buttonClasses = cn(styles.button, styles[variant], styles[size], className);
+type Props = LinkProps | NativeButtonProps;
 
-    if (as === 'link') {
-      const { href, external, ...linkProps } = props as ButtonAsLinkProps;
+export default function Button({ children, variant = 'primary', size = 'md', className = '', ...props }: Props) {
+  const classes = `${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]} ${className}`.trim();
 
-      if (external) {
-        return (
-          <a
-            ref={ref as React.ForwardedRef<HTMLAnchorElement>}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(buttonClasses, 'external-link')}
-            {...linkProps}>
-            {children}
-          </a>
-        );
-      }
-
-      return (
-        <Link
-          ref={ref as React.ForwardedRef<HTMLAnchorElement>}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          href={href as any}
-          className={cn(buttonClasses, 'button-link')}
-          {...linkProps}>
-          {children}
-        </Link>
-      );
-    }
-
+  if (props.as === 'link') {
     return (
-      <button ref={ref as React.ForwardedRef<HTMLButtonElement>} className={buttonClasses} {...(props as ButtonAsButtonProps)}>
+      <Link href={props.href} className={classes}>
         {children}
-      </button>
+      </Link>
     );
-  },
-);
+  }
 
-Button.displayName = 'Button';
-
-export { Button };
+  return (
+    <button className={classes} {...props}>
+      {children}
+    </button>
+  );
+}

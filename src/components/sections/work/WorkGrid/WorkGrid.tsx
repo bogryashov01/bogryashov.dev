@@ -1,0 +1,16 @@
+import Section from '@/components/ui/Section/Section';
+import { FEATURED_PROJECTS } from '@/lib/projects';
+import CaseStudyCard from '@/components/sections/CaseStudyGrid/components/CaseStudyCard';
+import styles from './WorkGrid.module.scss';
+
+export default function WorkGrid() {
+  return (
+    <Section className={styles.workGrid}>
+      <div className={styles.workGrid__grid}>
+        {FEATURED_PROJECTS.map((project) => (
+          <CaseStudyCard key={project.slug} project={project} />
+        ))}
+      </div>
+    </Section>
+  );
+}

@@ -1,23 +1,41 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import CaseStudyPage from '@/components/sections/CaseStudyPage/CaseStudyPage';
 import { PROJECTS } from '@/lib/projects';
-import CaseStudyClient from '@/components/CaseStudyClient/CaseStudyClient';
 
-interface CaseStudyPageProps {
+type Props = {
   params: Promise<{
     slug: string;
   }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS.find((item) => item.slug === slug);
+
+  if (!project) {
+    return {
+      title: 'Case Study Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} — Case Study`,
+    description: project.summary,
+  };
 }
 
-export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+export default async function Page({ params }: Props) {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.slug === slug);
+  const project = PROJECTS.find((item) => item.slug === slug);
 
   if (!project) {
     notFound();
   }
 
-  const currentIndex = PROJECTS.findIndex((p) => p.slug === slug);
-  const nextProject = PROJECTS[currentIndex + 1] || PROJECTS[0];
-
-  return <CaseStudyClient project={project} nextProject={nextProject} />;
+  return (
+    <main>
+      <CaseStudyPage project={project} />
+    </main>
+  );
 }

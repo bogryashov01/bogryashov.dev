@@ -1,0 +1,123 @@
+@use '@/styles/variables' as *;
+
+.caseStudyHero {
+  padding-top: 120px;
+  padding-bottom: 48px;
+}
+
+.caseStudyHero__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.caseStudyHero__category {
+  color: $accent-primary;
+  font-size: $font-size-xs;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.caseStudyHero__dot,
+.caseStudyHero__year {
+  color: $text-muted;
+  font-size: $font-size-xs;
+}
+
+.caseStudyHero__content {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.caseStudyHero__main {
+  max-width: 640px;
+}
+
+.caseStudyHero__title {
+  margin: 0;
+  color: $text-primary;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.caseStudyHero__headline {
+  margin: 18px 0 0;
+  color: $text-primary;
+  font-size: $font-size-xl;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.caseStudyHero__summary {
+  margin: 22px 0 0;
+  color: $text-muted;
+  font-size: $font-size-base;
+  line-height: 1.8;
+}
+
+.caseStudyHero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.caseStudyHero__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid $border-soft;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: $text-primary;
+  font-size: $font-size-xs;
+}
+
+.caseStudyHero__media {
+  min-width: 0;
+}
+
+.caseStudyHero__imageWrap {
+  overflow: hidden;
+  border: 1px solid $border-soft;
+  border-radius: $radius-xl;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)), rgba(19, 23, 28, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 18px 50px rgba(0, 0, 0, 0.24);
+}
+
+.caseStudyHero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 980px) {
+  .caseStudyHero__content {
+    grid-template-columns: 1fr;
+  }
+
+  .caseStudyHero__main {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .caseStudyHero {
+    padding-top: 92px;
+    padding-bottom: 28px;
+  }
+
+  .caseStudyHero__headline {
+    font-size: $font-size-lg;
+  }
+}

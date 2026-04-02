@@ -1,19 +1,17 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { ReactNode } from 'react';
+import Container from '@/components/ui/Container/Container';
 import styles from './Section.module.scss';
 
-interface SectionProps extends HTMLAttributes<HTMLElement> {
-  children: React.ReactNode;
+type Props = {
+  children: ReactNode;
   className?: string;
-}
+  containerClassName?: string;
+};
 
-const Section = forwardRef<HTMLElement, SectionProps>(({ className, children, ...props }, ref) => {
+export default function Section({ children, className = '', containerClassName = '' }: Props) {
   return (
-    <section ref={ref} className={`${styles.section} ${className || ''}`} {...props}>
-      <div className={styles.section__container}>{children}</div>
+    <section className={`${styles.section} ${className}`.trim()}>
+      <Container className={containerClassName}>{children}</Container>
     </section>
   );
-});
-
-Section.displayName = 'Section';
-
-export { Section };
+}

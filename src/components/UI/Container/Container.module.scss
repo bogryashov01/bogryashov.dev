@@ -1,0 +1,14 @@
+@use '@/styles/variables' as *;
+
+.container {
+  width: 100%;
+  max-width: calc(#{$container-width} + (#{$container-padding} * 2));
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @media (max-width: 767px) {
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+}

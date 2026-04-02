@@ -1,85 +1,70 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { COPY } from '@/lib/copy';
+import Footer from '@/components/layout/Footer/Footer';
+import Header from '@/components/layout/Header/Header';
+import { SITE_CONFIG } from '@/lib/site-config';
+import '@/styles/global.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const siteTitle = `${SITE_CONFIG.name} — ${SITE_CONFIG.title}`;
+const siteDescription =
+  'Product engineer building scalable SaaS platforms, CRM systems, dashboards, LMS products, and e-commerce experiences.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.domain),
   title: {
-    default: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-    template: '%s | Product-Focused Frontend Engineer',
+    default: siteTitle,
+    template: `%s | ${SITE_CONFIG.name}`,
   },
-  description:
-    'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
-  keywords: COPY.meta.keywords,
-  authors: [{ name: 'Vladimir Bogryashov' }],
-  creator: 'Vladimir Bogryashov',
-  publisher: 'bogryashovDev',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://bogryashov.dev'),
+  description: siteDescription,
+  applicationName: SITE_CONFIG.name,
+  manifest: '/manifest.webmanifest',
+  keywords: [
+    'Product Engineer',
+    'Frontend Engineer',
+    'React Developer',
+    'Next.js Developer',
+    'SaaS Development',
+    'CRM Systems',
+    'Dashboard Development',
+    'LMS Platform',
+    'E-commerce Development',
+  ],
+  authors: [{ name: SITE_CONFIG.name, url: SITE_CONFIG.domain }],
+  creator: SITE_CONFIG.name,
   alternates: {
-    canonical: '/',
-    languages: {
-      en: '/',
-      uk: '/uk',
-    },
+    canonical: SITE_CONFIG.domain,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    type: 'website',
+    title: siteTitle,
+    description: siteDescription,
+    url: SITE_CONFIG.domain,
+    siteName: SITE_CONFIG.name,
     locale: 'en_US',
-    url: 'https://bogryashov.dev',
-    title: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-    description:
-      'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
-    siteName: 'bogryashovDev',
-    images: [
-      {
-        url: '/og.png',
-        width: 1200,
-        height: 630,
-        alt: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-      },
-    ],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Product-Focused Frontend Engineer — CRMs, SaaS, Dashboards',
-    description:
-      'Product-focused frontend engineer building CRMs, dashboards, SaaS interfaces and internal tools. Open to contract and product work.',
-    images: ['/og.png'],
-    creator: '@bogryashovdev',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <meta name="theme-color" content="#0F1114" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

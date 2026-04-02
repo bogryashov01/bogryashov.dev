@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+
+.contactHero {
+  padding-top: 120px;
+  padding-bottom: 32px;
+}
+
+.contactHero__content {
+  max-width: 920px;
+}
+
+.contactHero__eyebrow {
+  margin: 0 0 16px;
+  color: $accent-primary;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contactHero__title {
+  margin: 0;
+  color: $text-primary;
+  font-size: clamp(40px, 7vw, 76px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.contactHero__subtitle {
+  margin: 24px 0 0;
+  max-width: 760px;
+  color: $text-muted;
+  font-size: $font-size-lg;
+  line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+  .contactHero {
+    padding-top: 92px;
+    padding-bottom: 24px;
+  }
+
+  .contactHero__subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}

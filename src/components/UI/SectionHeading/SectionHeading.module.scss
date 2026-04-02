@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+
+.sectionHeading {
+  max-width: 760px;
+}
+
+.sectionHeading--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sectionHeading__eyebrow {
+  margin: 0 0 14px;
+  color: $accent-primary;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectionHeading__title {
+  margin: 0;
+  color: $text-primary;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.sectionHeading__subtitle {
+  margin: 18px 0 0;
+  max-width: 680px;
+  color: $text-muted;
+  font-size: $font-size-lg;
+  line-height: 1.65;
+}
+
+.sectionHeading--center .sectionHeading__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}

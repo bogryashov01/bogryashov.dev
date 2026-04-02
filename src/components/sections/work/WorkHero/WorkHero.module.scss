@@ -1,0 +1,49 @@
+@use '@/styles/variables' as *;
+
+.workHero {
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.workHero__content {
+  max-width: 980px;
+}
+
+.workHero__eyebrow {
+  margin: 0 0 16px;
+  color: $accent-primary;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.workHero__title {
+  margin: 0;
+  max-width: 980px;
+  color: $text-primary;
+  font-size: clamp(40px, 7vw, 76px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.workHero__subtitle {
+  margin: 24px 0 0;
+  max-width: 760px;
+  color: $text-muted;
+  font-size: $font-size-lg;
+  line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+  .workHero {
+    padding-top: 92px;
+    padding-bottom: 28px;
+  }
+
+  .workHero__subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}

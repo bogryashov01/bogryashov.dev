@@ -1,0 +1,59 @@
+@use '@/styles/variables' as *;
+
+.caseStudyGrid__eyebrow {
+  margin: 0 0 14px;
+  color: $accent-primary;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.caseStudyGrid__title {
+  margin: 0;
+  color: $text-primary;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.caseStudyGrid__subtitle {
+  margin: 18px 0 0;
+  max-width: 680px;
+  color: $text-muted;
+  font-size: $font-size-lg;
+  line-height: 1.65;
+}
+
+.caseStudyGrid__header {
+  margin-bottom: 40px;
+}
+
+.caseStudyGrid__featured {
+  margin-bottom: 24px;
+}
+
+.caseStudyGrid__secondary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .caseStudyGrid__secondary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.caseStudyGrid__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .caseStudyGrid__grid {
+    grid-template-columns: 1fr;
+  }
+}
