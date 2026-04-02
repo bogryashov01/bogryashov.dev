@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Container from '@/components/ui/Container/Container';
+import Container from '@/components/UI/Container/Container';
 import styles from './Section.module.scss';
 
 type Props = {

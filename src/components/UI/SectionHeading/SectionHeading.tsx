@@ -1,4 +1,4 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
+import Reveal from '@/components/UI/Reveal/Reveal';
 import styles from './SectionHeading.module.scss';
 
 type Props = {
