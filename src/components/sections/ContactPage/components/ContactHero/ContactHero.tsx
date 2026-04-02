@@ -1,4 +1,4 @@
-import Section from '@/components/ui/Section/Section';
+import Section from '@/components/UI/Section/Section';
 import styles from './ContactHero.module.scss';
 
 export default function ContactHero() {

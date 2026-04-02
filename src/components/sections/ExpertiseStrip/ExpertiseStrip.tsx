@@ -1,5 +1,5 @@
-import Reveal from '../../ui/Reveal/Reveal';
-import Section from '../../ui/Section/Section';
+import Reveal from '@/components/UI/Reveal/Reveal';
+import Section from '@/components/UI/Section/Section';
 
 import styles from './ExpertiseStrip.module.scss';
 

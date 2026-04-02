@@ -1,4 +1,4 @@
-import Section from '@/components/ui/Section/Section';
+import Section from '@/components/UI/Section/Section';
 import { FEATURED_PROJECTS } from '@/lib/projects';
 import CaseStudyCard from '@/components/sections/CaseStudyGrid/components/CaseStudyCard';
 import styles from './WorkGrid.module.scss';

@@ -1,6 +1,6 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
-import Section from '@/components/ui/Section/Section';
-import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
+import Reveal from '@/components/UI/Reveal/Reveal';
+import Section from '@/components/UI/Section/Section';
+import SectionHeading from '@/components/UI/SectionHeading/SectionHeading';
 import { FEATURED_PROJECTS } from '@/lib/projects';
 import CaseStudyCard from './components/CaseStudyCard';
 import styles from './CaseStudyGrid.module.scss';

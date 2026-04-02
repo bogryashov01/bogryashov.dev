@@ -1,6 +1,6 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
-import Button from '@/components/ui/Button/Button';
-import Section from '@/components/ui/Section/Section';
+import Reveal from '@/components/UI/Reveal/Reveal';
+import Button from '@/components/UI/Button/Button';
+import Section from '@/components/UI/Section/Section';
 import styles from './ContactCTA.module.scss';
 
 export default function ContactCTA() {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { Project } from '@/lib/projects';
-import Section from '@/components/ui/Section/Section';
+import Section from '@/components/UI/Section/Section';
 import styles from './CaseStudyHero.module.scss';
 
 type Props = {

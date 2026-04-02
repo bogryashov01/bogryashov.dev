@@ -1,5 +1,5 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
-import Section from '@/components/ui/Section/Section';
+import Reveal from '@/components/UI/Reveal/Reveal';
+import Section from '@/components/UI/Section/Section';
 import styles from './WhyWorkWithMe.module.scss';
 
 const points = [

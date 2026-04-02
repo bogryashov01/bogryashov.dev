@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 
-import Button from '../../ui/Button/Button';
-import Container from '../../ui/Container/Container';
+import Button from '../../UI/Button/Button';
+import Container from '../../UI/Container/Container';
 import HeroBackdrop from './components/HeroBackdrop/HeroBackdrop';
 import ExpertiseStrip from '../ExpertiseStrip/ExpertiseStrip';
 

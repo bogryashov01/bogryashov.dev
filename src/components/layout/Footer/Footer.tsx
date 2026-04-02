@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Container from '@/components/ui/Container/Container';
+import Container from '@/components/UI/Container/Container';
 import { FOOTER_NAV_ITEMS, SITE_CONFIG, SOCIAL_ITEMS } from '@/lib/site-config';
 import styles from './Footer.module.scss';
 

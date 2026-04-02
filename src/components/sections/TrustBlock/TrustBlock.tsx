@@ -1,5 +1,5 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
-import Container from '@/components/ui/Container/Container';
+import Reveal from '@/components/UI/Reveal/Reveal';
+import Container from '@/components/UI/Container/Container';
 import styles from './TrustBlock.module.scss';
 
 const stats = [

@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import Container from '@/components/ui/Container/Container';
-import Button from '@/components/ui/Button/Button';
+import Container from '@/components/UI/Container/Container';
+import Button from '@/components/UI/Button/Button';
 import { NAV_ITEMS } from '@/lib/site-config';
 import styles from './Header.module.scss';
 

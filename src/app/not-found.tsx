@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Button from '@/components/ui/Button/Button';
-import Section from '@/components/ui/Section/Section';
+import Button from '@/components/UI/Button/Button';
+import Section from '@/components/UI/Section/Section';
 import styles from './not-found.module.scss';
 
 export default function NotFound() {

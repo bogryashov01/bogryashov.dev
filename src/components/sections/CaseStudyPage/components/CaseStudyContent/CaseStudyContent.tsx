@@ -1,6 +1,6 @@
-import Reveal from '@/components/ui/Reveal/Reveal';
+import Reveal from '@/components/UI/Reveal/Reveal';
 import type { Project } from '@/lib/projects';
-import Section from '@/components/ui/Section/Section';
+import Section from '@/components/UI/Section/Section';
 import styles from './CaseStudyContent.module.scss';
 
 type Props = {

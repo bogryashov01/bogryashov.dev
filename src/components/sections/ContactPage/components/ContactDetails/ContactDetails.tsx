@@ -1,4 +1,4 @@
-import Section from '@/components/ui/Section/Section';
+import Section from '@/components/UI/Section/Section';
 import { SITE_CONFIG } from '@/lib/site-config';
 import styles from './ContactDetails.module.scss';
 
