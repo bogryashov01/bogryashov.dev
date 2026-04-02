@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     summary:
       'A learning management platform designed for structured online education, including courses, lessons, assignments, and student progress flows.',
     tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'LMS'],
-    image: '/images/lms/main.png',
+    image: '/images/lms/main.jpg',
     images: ['/images/lms/main.jpg', '/images/lms-2.jpg', '/images/lms-3.jpg'],
     challenge: [
       'Build a learning platform that feels structured, simple, and practical for real educational use',
