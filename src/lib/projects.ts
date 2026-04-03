@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
       'Flexus is a modular CRM and business system designed to help teams build structured workflows, dashboards, and data-driven operations with AI-powered assistance.',
     tags: ['Next.js', 'React', 'TypeScript', 'CRM', 'AI'],
     image: '/images/flexus/main.png',
-    images: ['/images/flexus/main.jpg', '/images/flexus-2.jpg', '/images/flexus-3.jpg'],
+    images: ['/images/flexus/main.png', '/images/flexus/flexus-2.jpg', '/images/flexus/flexus-3.jpg'],
     challenge: [
       'Create a CRM-like business platform that feels more flexible than traditional CRM tools',
       'Design a system that can scale from simple workflows to structured business operations',
