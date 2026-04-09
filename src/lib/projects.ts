@@ -123,6 +123,43 @@ export const PROJECTS: Project[] = [
       'Modern checkout and shopping flow foundation designed for growth',
     ],
   },
+  {
+    slug: 'duke-horlogerie',
+    title: 'Duke Horlogerie',
+    headline: 'Luxury watch brand website with product storytelling and premium presentation',
+    url: 'https://dukehorlogerie.com/',
+    category: 'E-commerce',
+    featured: false,
+    order: 4,
+    year: '2025',
+    summary:
+      'Worked on the public-facing website for a Luxembourg-based haute horlogerie brand, focused on premium product presentation, brand storytelling, and a structured browsing experience across collection, brand, identity, manufacture, newsroom, and contact flows.',
+    tags: ['Vue', 'Frontend', 'Luxury E-commerce', 'Brand Website'],
+    image: '/images/duke/duke.jpg',
+    images: ['/images/duke/duke.jpg', '/images/duke/duke-2.jpg', '/images/duke/duke-3.jpg'],
+    challenge: [
+      'Create a premium digital presence for a luxury watch brand with strong visual identity and storytelling',
+      'Structure the public-facing experience around collection, brand, identity, manufacture, media, and contact flows',
+      'Support a polished launch-ready presentation for an extremely limited pre-series collection',
+    ],
+    contribution: [
+      'Worked on the main customer-facing website experience and key frontend presentation layers',
+      'Helped shape the structure and presentation of core pages for collection discovery, brand storytelling, and content browsing',
+      'Contributed to the premium visual feel and navigation experience expected from a luxury product website',
+    ],
+    businessOutcome: [
+      'Created a stronger digital presentation for a high-end independent watch brand',
+      'Supported launch communication around limited-edition pre-series models',
+      'Improved how visitors explore the collection, brand story, and contact/media information',
+    ],
+    technicalHighlights: [
+      'Frontend work focused on public-facing product and brand presentation',
+      'Structured navigation across collection, brand, identity, manufacture, newsroom, and contact sections',
+      'Luxury-oriented UI approach built around clarity, hierarchy, and visual polish',
+    ],
+  },
 ];
 
 export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.featured).sort((a, b) => a.order - b.order);
+
+export const ALL_PROJECTS = [...PROJECTS].sort((a, b) => a.order - b.order);
